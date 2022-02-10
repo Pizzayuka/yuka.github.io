@@ -135,7 +135,9 @@ img{
 
 .avater{
     position: absolute;
-    right:20px 
+
+    right:20px;
+    top:60%;
 }
 
 .hi{
