@@ -132,3 +132,19 @@ img{
     from { opacity: 0 }
     to { opacity: 100 }
 }
+
+.avater{
+    position: absolute;
+    right:20px 
+}
+
+.hi{
+    position:absolute;
+    top: 50%;
+    right: 10px;
+    display: none;
+}
+
+.avater:hover + .hi{
+    display:block;
+}
