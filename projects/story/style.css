@@ -1,0 +1,13 @@
+.wrapper {
+    max-width:700px;
+    margin:0 auto;
+}
+
+
+section {
+    border: 2px solid black;
+}
+
+.intro {
+    height:100vh;
+}
