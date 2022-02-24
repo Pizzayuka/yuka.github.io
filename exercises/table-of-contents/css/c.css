@@ -5,12 +5,23 @@ body{
     font-family: 'Commissioner', sans-serif; 
     font-family: 'Kosugi Maru', sans-serif; 
 }
+.heading{
+    margin-bottom: 50px;
+}
+
+.titles{
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    margin-bottom: 20px;
+}
+
 .entries{
     /* border: 1px dashed blue; */
     text-align: left;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-
+    grid-template-columns: repeat(6, 1fr); 
+    margin-top: 5px;
 }
 
 h1,h2{
@@ -18,21 +29,32 @@ h1,h2{
     line-height: 10px;
 }
 
-.entries{
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* width: 100vw; */
+.chapter{
+    grid-column: 1;
 }
 
-.titles{
-    margin-top:30px;
-    margin-bottom: 30px;
+.title{
+    grid-column:2/4;
 }
   
+.discription{
+    grid-column:4/6;
+}
+
+.page{
+    grid-column: 6;
+}
+
 main{
     margin: 10px;
 }
 
-div{
-    margin-bottom: 5px;
+a{
+    text-decoration: none;
+    color:blanchedalmond;
+    cursor: pointer;
+}
+
+a:hover{
+    color:chartreuse;
 }

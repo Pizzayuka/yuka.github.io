@@ -33,3 +33,12 @@ p{
     margin-right: 5px;
     max-width: 50%;
 }
+a{
+    text-decoration: none;
+    color:blanchedalmond;
+    cursor: pointer;
+}
+
+a:hover{
+    color:chartreuse;
+}
