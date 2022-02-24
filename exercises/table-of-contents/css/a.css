@@ -5,6 +5,9 @@ body{
     font-family: 'Kosugi Maru', sans-serif;
     text-transform: uppercase;
     font-size: 20px;
+    background-color: black;
+    color: blanchedalmond;
+}
 }
 
 .wrapper{
