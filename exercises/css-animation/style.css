@@ -1,35 +1,105 @@
 .container{
-    margin-top: 10vh;
+  margin: 10px;
 }
 
-.item{
-    top: 50%;
-    text-align: center;
-    animation: spinType 5s ease-out infinite, fade 5s ease-out infinite;
+#ellips1{
+  fill:red;
+  opacity: 50%;
+  width: 300px;
+  animation: slidein 10s infinite;
+  position: relative;
 }
 
-.item:hover{
-    cursor: pointer;
-    animation-play-state: paused;
+#ellips1:hover{
+  transform: scale(5);
 }
 
-@keyframes spinType {
-    0% {
-      transform: rotate(0turn);
-    }
+#ellips2{
+  fill:aqua;
+  opacity: 50%;
+  width: 300px;
+  animation: slideinnn 10s infinite;
+  position: relative;
+  margin-top: 0;
+}
 
-    100% {
-      transform: rotate(1turn);
-    }
+#ellips2:hover{
+  transform: scale(6);
+}
+
+#ellips3{
+  fill:deeppink;
+  opacity: 50%;
+  width: 300px;
+  animation: slideinn 10s infinite;
+  position: relative;
+  margin-top: 0;
+}
+
+#ellips3:hover{
+  transform: scale(3);
+}
+
+#ellips4{
+  fill:Chartreuse;
+  opacity: 50%;
+  width: 300px;
+  animation: slidein 10s infinite 3s;
+  position: absolute;
+}
+
+#ellips4:hover{
+  transform: scale(4);
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
   }
 
-
-@keyframes fade{
-0%{
-    transform: opacity(1)
+  to {
+    margin-left: 0%;
+  }
 }
 
-100%{
-    transform: opacity(0)
+@keyframes slideinn {
+  from {
+    margin-left: 100%;
+  }
+
+  65% {
+    margin-left: 25%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
 }
+
+@keyframes slideinnn {
+  from {
+    margin-left: -10%;
+  }
+
+  50% {
+    margin-left: 55%;
+  }
+
+  to {
+    margin-left: 100%;
+  }
+}
+
+@keyframes slideinnnn {
+  from {
+    margin-left: 0%;
+  }
+
+  30% {
+    margin-left: 80%;
+  }
+
+  to {
+    margin-left: 100%;
+  }
 }
