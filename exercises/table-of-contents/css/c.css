@@ -1,0 +1,26 @@
+body{
+    width: auto;
+    background-color: black;
+    color: blanchedalmond;
+}
+.entries{
+    /* border: 1px dashed blue; */
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+
+}
+
+h1,h2{
+    font-weight: normal;
+    line-height: 10px;
+}
+
+.entries{
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* width: 100vw; */
+}
+
+  
+  

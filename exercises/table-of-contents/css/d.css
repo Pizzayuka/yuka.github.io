@@ -1,0 +1,15 @@
+body{
+ font-size: 2rem;
+}
+
+.entries{
+    /* border: 1px dashed blue; */
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+
+}
+span{
+    /* height: 50px; */
+    margin-top:50px;
+}
