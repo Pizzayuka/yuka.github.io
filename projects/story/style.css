@@ -1,6 +1,13 @@
+body{
+    font-family: american typewriter;
+    text-align: center;
+
+}
+
 .wrapper {
-    max-width:700px;
+    max-width:80vw;
     margin:0 auto;
+    
 }
 
 
@@ -9,5 +16,22 @@ section {
 }
 
 .intro {
-    height:100vh;
+    height:200vh;
+}
+
+.middle{
+    max-width: 70vw;
+}
+
+h1{
+    font-family: baskerville;
+    font-weight: normal;
+    font-size: 20vw;
+    margin-top: 200px;
+}
+
+h2{
+    font-family: american typewriter;
+    font-weight: normal;
+    font-size: 48px;
 }
