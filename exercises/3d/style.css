@@ -1,0 +1,29 @@
+
+body {
+    background-color: black;
+    margin: 0;
+}
+  
+model-viewer {
+    width: 80vw;
+    height: 80vh;
+}
+
+
+.interaction-prompt {
+    font-size: 150px;
+}
+
+
+button {
+    background-color: yellow;
+    color: black;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+}
+
+button:hover{
+    opacity: 0;
+}
