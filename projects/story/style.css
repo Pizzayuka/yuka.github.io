@@ -4,34 +4,111 @@ body{
 
 }
 
-.wrapper {
+.flex-container {
+    display: flex;
+    flex-direction: column;
     max-width:80vw;
-    margin:0 auto;
-    
+    margin:0 auto; 
+    justify-content: center;
+    align-items: center;
+}
+
+section, header, footer {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 1000px; */
+    width: 70vw;
+    border: 1px solid black;
+    justify-content: center;
 }
 
 
-section {
-    border: 2px solid black;
+.header {
+    height:50vw;
+    min-height: 100vw;
 }
 
-.intro {
-    height:200vh;
+.footer{
+    height: 5vw;
+    min-height: 200px;
 }
 
-.middle{
-    max-width: 70vw;
+
+.line1{
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    height: 10px;
+    transition: 0.2s ease all;
+    font-size: 0px;
+    max-width: 68vw;
+}
+  
+.line4{
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    height: 10px;
+    transition: 0.2s ease all;
+    font-size: 0px;
+    max-width: 68vw;
+}
+
+header:hover + .line1{
+    height: 200px;
+    font-size: 20px;
+}
+  
+footer:hover + .line4{
+    height: 200px;
+    font-size: 20px;
+}
+
+.line2{
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    height: 10px;
+    transition: 0.2s ease all;
+    font-size: 0px;
+    max-width: 65vw;
+}
+  
+.line3{
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    height: 10px;
+    transition: 0.2s ease all;
+    font-size: 0px;
+    max-width: 65vw;
+
+}
+  
+.line1:hover + .line4{
+    height: 200px;
+    font-size: 20px;
+}
+
+.line1:hover{
+    height: 200px;
+    font-size: 20px;
+}
+  
+.line4:hover + .line3{
+    height: 200px;
+    font-size: 20px;
 }
 
 h1{
     font-family: baskerville;
     font-weight: normal;
-    font-size: 20vw;
-    margin-top: 200px;
+    font-size: 10vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    line-height: 12vw;
 }
 
 h2{
     font-family: american typewriter;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 5vw;
 }
