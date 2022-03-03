@@ -43,7 +43,7 @@ section, header, footer {
     max-width: 68vw;
 }
   
-.line4{
+.line-one{
     box-sizing: border-box;
     padding: 1rem 2rem;
     height: 10px;
@@ -57,41 +57,12 @@ header:hover + .line1{
     font-size: 20px;
 }
   
-footer:hover + .line4{
-    height: 200px;
-    font-size: 20px;
-}
-
-.line2{
-    box-sizing: border-box;
-    padding: 1rem 2rem;
-    height: 10px;
-    transition: 0.2s ease all;
-    font-size: 0px;
-    max-width: 65vw;
-}
-  
-.line3{
-    box-sizing: border-box;
-    padding: 1rem 2rem;
-    height: 10px;
-    transition: 0.2s ease all;
-    font-size: 0px;
-    max-width: 65vw;
-
-}
-  
-.line1:hover + .line4{
+.line1:hover + .line-one{
     height: 200px;
     font-size: 20px;
 }
 
 .line1:hover{
-    height: 200px;
-    font-size: 20px;
-}
-  
-.line4:hover + .line3{
     height: 200px;
     font-size: 20px;
 }

@@ -1,13 +1,12 @@
 body{
     font-family: american typewriter;
     text-align: center;
-
 }
 
 .flex-container {
     display: flex;
     flex-direction: column;
-    max-width:80vw;
+    max-width:80vw; 
     margin:0 auto; 
     justify-content: center;
     align-items: center;
@@ -23,6 +22,12 @@ section, header, footer {
 }
 
 
+
+p{
+    font-size: 20px;
+    padding: 1rem;
+}
+
 .header {
     height:50vw;
     min-height: 100vw;
@@ -34,60 +39,66 @@ section, header, footer {
 }
 
 
-.line1{
-    box-sizing: border-box;
-    padding: 1rem 2rem;
-    height: 200px;
-    transition: 0.2s ease all;
-    font-size: 20px;
-    max-width: 68vw;
-}
-  
-.line-one{
-    box-sizing: border-box;
-    padding: 1rem 2rem;
-    height: 200px;
-    transition: 0.2s ease all;
-    font-size: 20px;
-    max-width: 68vw;
-}
-
 .line2{
     box-sizing: border-box;
     padding: 1rem 2rem;
-    height: 10px;
+    height: 20vw;
     transition: 0.2s ease all;
-    font-size: 0px;
+    font-size: 1rem;
     max-width: 65vw;
+    min-height: 200px;
+    border-top: 0;
+}
+
+.line-two{
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    height: 20vw;
+    transition: 0.2s ease all;
+    font-size: 1rem;
+    max-width: 65vw;
+    border-bottom: 0;
+
 }
   
-.line-two{
+.line3{
     box-sizing: border-box;
     padding: 1rem 2rem;
     height: 10px;
     transition: 0.2s ease all;
     font-size: 0px;
-    max-width: 65vw;
+    max-width: 63vw;
+    border-top: 0;
+}
 
+.line-three{
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    height: 10px;
+    transition: 0.2s ease all;
+    font-size: 0px;
+    max-width: 63vw;
+    border-bottom: 0;
 }
   
-.line1:hover + .line2{
+  
+.line2:hover + .line3{
     height: 20vw;
     font-size: 1rem;
-    min-height: 200px;
-
+    min-height: 400px;
 }
   
-.line2:hover{
+.line3:hover{
     height: 20vw;
     font-size: 1rem;
-    min-height: 200px;
-
+    min-height: 400px;
 }
 
-.line2:hover + .line-two{
+.line3:hover + .line-three{
     height: 20vw;
     font-size: 1rem;
+    min-height: 400px;
+
 }
 
 h1{
