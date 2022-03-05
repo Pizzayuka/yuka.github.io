@@ -1,18 +1,16 @@
 body{
     font-family: american typewriter;
     text-align: center;
-
 }
 
 .flex-container {
     display: flex;
     flex-direction: column;
-    max-width:80vw;
+    max-width:80vw; 
     margin:0 auto; 
     justify-content: center;
     align-items: center;
 }
-
 .grid-container{
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -28,7 +26,7 @@ svg{
 }
 
 .buttons{
-    margin-top: 112vw;    
+    margin-top: 232vw;    
 }
 
 section, header, footer {
@@ -40,6 +38,12 @@ section, header, footer {
     justify-content: center;
 }
 
+p{
+    font-size: 20px;
+    padding: 1rem;
+    margin: 0;
+    padding: 5vw;
+}
 
 .header {
     height:50vw;
@@ -51,74 +55,68 @@ section, header, footer {
     min-height: 200px;
 }
 
-
-.line1{
+.line7{
     box-sizing: border-box;
     padding: 1rem 2rem;
-    height: 200px;
+    height: 20vw;
     transition: 0.2s ease all;
-    font-size: 20px;
-    max-width: 68vw;
+    font-size: 1rem;
+    max-width: 65vw;
     border-top: 0;
-
 }
-  
-.line-one{
+
+.line-seven{
     box-sizing: border-box;
     padding: 1rem 2rem;
-    height: 200px;
+    height: 20vw;
     transition: 0.2s ease all;
-    font-size: 20px;
-    max-width: 68vw;
+    font-size: 1rem;
+    max-width: 65vw;
     border-bottom: 0;
-
 }
 
-.line2{
+.line8{
     box-sizing: border-box;
     padding: 1rem 2rem;
     height: 10px;
     transition: 0.2s ease all;
     font-size: 0px;
-    max-width: 65vw;
+    max-width: 63vw;
     border-top: 0;
-    
+    border-bottom: 0;
 }
-  
-.line-two{
+
+.line-eight{
     box-sizing: border-box;
     padding: 1rem 2rem;
     height: 10px;
     transition: 0.2s ease all;
     font-size: 0px;
-    max-width: 65vw;
-    border-top: 0;
+    max-width: 63vw;
     border-bottom: 0;
 }
   
-.line1:hover + .line2{
+
+  
+.line7:hover + .line8{
     height: 20vw;
     font-size: 1rem;
-    /* box-shadow: 0 0 20px darkblue; */
+    /* box-shadow: 0 0 20px darkblue;    */
 }
   
-.line2:hover{
+.line8:hover{
     height: 20vw;
     font-size: 1rem;
     /* box-shadow: 0 0 20px darkblue; */
 }
 
-.line2:hover + .line-two{
+.line8:hover + .line-eight{
     height: 20vw;
     font-size: 1rem;
     /* box-shadow: 0 0 20px darkblue; */
 }
 
-.line-two:hover{
-    height: 20vw;
-    font-size: 1rem;
-    /* box-shadow: 0 0 20px darkblue; */
-}
+
 
 h1{
     font-family: baskerville;
@@ -144,16 +142,13 @@ a{
 }
 
 a:hover{
-
-    color: darkblue; 
+    color: darkblue;
 }
-
 
 @media (max-width: 1000px) { 
     body { 
       background-color: black;
       color:  white;
-      text-shadow: 0 0 10px rgba(245, 245, 245, 0.5);
       text-align: left;
     }
     a{
@@ -161,7 +156,7 @@ a:hover{
     }
 
     a:hover{
-        text-shadow: 0 0 20px darkblue;
+        color:  darkblue;
     }
 
     h2{
@@ -170,20 +165,33 @@ a:hover{
     
     footer{
         text-shadow: none;
-        text-shadow: 0 0 10px rgba(245, 245, 245, 0.5);
     }
-    .line1:hover + .line2{   
-        min-height: 200px;    
+
+    .line7{
+        min-height: 400px;
+    }
+
+    .line-seven{
+        min-height: 400px;
+    }
+    .line7:hover + .line8{
+        min-height: 500px;
     }
       
-    .line2:hover{
-        min-height: 200px;
+    .line8:hover{
+        min-height: 500px;
     }
+    
+    .line8:hover + .line-eight{
+        min-height: 300px;
+    }
+
     #back-button, #foward-button{
         fill: white;
     }
 
     .buttons{
-        margin-top: 700px;
+        margin-top: 3100px;
     }
 }
+

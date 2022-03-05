@@ -11,6 +11,23 @@ body{
     justify-content: center;
     align-items: center;
 }
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+}
+
+svg{
+    height: 7vw;
+}
+
+#back-button:hover, #foward-button:hover{
+    fill: darkblue;
+}
+
+.buttons{
+    margin-top: 120vw;    
+}
 
 section, header, footer {
     display: flex;
@@ -22,10 +39,10 @@ section, header, footer {
 }
 
 
-
 p{
     font-size: 20px;
-    padding: 1rem;
+    margin: 0;
+    padding: 5vw;
 }
 
 .header {
@@ -42,18 +59,17 @@ p{
 .line2{
     box-sizing: border-box;
     padding: 1rem 2rem;
-    height: 20vw;
+    height: 10vw;
     transition: 0.2s ease all;
     font-size: 1rem;
     max-width: 65vw;
-    min-height: 200px;
     border-top: 0;
 }
 
 .line-two{
     box-sizing: border-box;
     padding: 1rem 2rem;
-    height: 20vw;
+    height: 10vw;
     transition: 0.2s ease all;
     font-size: 1rem;
     max-width: 65vw;
@@ -69,6 +85,7 @@ p{
     font-size: 0px;
     max-width: 63vw;
     border-top: 0;
+    border-bottom: 0;
 }
 
 .line-three{
@@ -85,31 +102,34 @@ p{
 .line2:hover + .line3{
     height: 20vw;
     font-size: 1rem;
-    min-height: 400px;
+    /* box-shadow: 0 0 20px darkblue; */
+
 }
   
 .line3:hover{
     height: 20vw;
     font-size: 1rem;
-    min-height: 400px;
+    /* box-shadow: 0 0 20px darkblue; */
 }
+
 
 .line3:hover + .line-three{
     height: 20vw;
     font-size: 1rem;
-    min-height: 400px;
-
+    /* box-shadow: 0 0 20px darkblue; */
 }
+
+
 
 h1{
     font-family: baskerville;
     font-weight: normal;
     font-size: 10vw;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
     margin-left: 5vw;
     margin-right: 5vw;
-    line-height: 12vw;
+    line-height: 10vw;
 }
 
 h2{
@@ -117,3 +137,67 @@ h2{
     font-weight: normal;
     font-size: 5vw;
 }
+
+a{
+    text-decoration: none;
+    color:black;
+    cursor: pointer; 
+}
+
+a:hover{
+    color: darkblue; 
+}
+
+@media (max-width: 1000px) { 
+    body { 
+      background-color: black;
+      color:  white;
+      text-align: left;
+    }
+    a{
+        color: white;
+    }
+
+    a:hover{
+        text-shadow: 0 0 20px darkblue;
+    }
+
+    h2{
+        margin-left: 5vw;
+    }
+    
+    footer{
+        text-shadow: none;
+    }
+
+    .line2{
+        height: 20vw;
+        min-height: 200px;
+    }
+
+    .line-two{
+        height: 20vw;
+        min-height: 100px;
+    }
+
+    .line2:hover + .line3{
+        min-height: 400px;
+    }
+      
+    .line3:hover{  
+        min-height: 400px;
+    }
+    
+    .line3:hover + .line-three{
+        min-height: 400px;
+    }
+
+    #back-button, #foward-button{
+        fill: white;
+    }
+
+    .buttons{
+        margin-top: 900px;
+    }
+}
+

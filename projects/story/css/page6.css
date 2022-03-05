@@ -1,18 +1,16 @@
 body{
     font-family: american typewriter;
     text-align: center;
-
 }
 
 .flex-container {
     display: flex;
     flex-direction: column;
-    max-width:80vw;
+    max-width:80vw; 
     margin:0 auto; 
     justify-content: center;
     align-items: center;
 }
-
 .grid-container{
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -28,7 +26,7 @@ svg{
 }
 
 .buttons{
-    margin-top: 112vw;    
+    margin-top: 181vw;    
 }
 
 section, header, footer {
@@ -41,6 +39,14 @@ section, header, footer {
 }
 
 
+
+p{
+    font-size: 20px;
+    padding: 1rem;
+    margin: 0;
+    padding: 5vw;
+}
+
 .header {
     height:50vw;
     min-height: 100vw;
@@ -51,74 +57,68 @@ section, header, footer {
     min-height: 200px;
 }
 
-
-.line1{
+.line5{
     box-sizing: border-box;
     padding: 1rem 2rem;
-    height: 200px;
+    height: 15vw;
     transition: 0.2s ease all;
-    font-size: 20px;
-    max-width: 68vw;
+    font-size: 1rem;
+    max-width: 65vw;
     border-top: 0;
-
 }
-  
-.line-one{
+
+.line-five{
     box-sizing: border-box;
     padding: 1rem 2rem;
-    height: 200px;
+    height: 15vw;
     transition: 0.2s ease all;
-    font-size: 20px;
-    max-width: 68vw;
+    font-size: 1rem;
+    max-width: 65vw;
     border-bottom: 0;
-
 }
 
-.line2{
+.line6{
     box-sizing: border-box;
     padding: 1rem 2rem;
     height: 10px;
     transition: 0.2s ease all;
     font-size: 0px;
-    max-width: 65vw;
+    max-width: 63vw;
     border-top: 0;
-    
+    border-bottom: 0;
 }
-  
-.line-two{
+
+.line-six{
     box-sizing: border-box;
     padding: 1rem 2rem;
     height: 10px;
     transition: 0.2s ease all;
     font-size: 0px;
-    max-width: 65vw;
-    border-top: 0;
+    max-width: 63vw;
     border-bottom: 0;
 }
   
-.line1:hover + .line2{
+
+  
+.line5:hover + .line6{
     height: 20vw;
     font-size: 1rem;
-    /* box-shadow: 0 0 20px darkblue; */
+    /* box-shadow: 0 0 20px darkblue;    */
 }
   
-.line2:hover{
+.line6:hover{
     height: 20vw;
     font-size: 1rem;
     /* box-shadow: 0 0 20px darkblue; */
 }
 
-.line2:hover + .line-two{
+.line6:hover + .line-six{
     height: 20vw;
     font-size: 1rem;
     /* box-shadow: 0 0 20px darkblue; */
 }
 
-.line-two:hover{
-    height: 20vw;
-    font-size: 1rem;
-    /* box-shadow: 0 0 20px darkblue; */
-}
+
 
 h1{
     font-family: baskerville;
@@ -144,16 +144,13 @@ a{
 }
 
 a:hover{
-
-    color: darkblue; 
+    color: rgb(8, 8, 56);
 }
-
 
 @media (max-width: 1000px) { 
     body { 
       background-color: black;
       color:  white;
-      text-shadow: 0 0 10px rgba(245, 245, 245, 0.5);
       text-align: left;
     }
     a{
@@ -161,7 +158,7 @@ a:hover{
     }
 
     a:hover{
-        text-shadow: 0 0 20px darkblue;
+        color: darkblue;
     }
 
     h2{
@@ -170,20 +167,34 @@ a:hover{
     
     footer{
         text-shadow: none;
-        text-shadow: 0 0 10px rgba(245, 245, 245, 0.5);
     }
-    .line1:hover + .line2{   
-        min-height: 200px;    
-    }
-      
-    .line2:hover{
-        min-height: 200px;
-    }
+
     #back-button, #foward-button{
         fill: white;
     }
 
+    .line5{
+        min-height: 400px;
+    }
+
+    .line-five{
+        min-height: 400px;
+    }
+
+    .line5:hover + .line6{
+        min-height: 500px;
+    }
+      
+    .line6:hover{
+        min-height: 500px;
+    }
+    
+    .line6:hover + .line-six{
+        min-height: 400px;
+    }
+
     .buttons{
-        margin-top: 700px;
+        margin-top: 2100px ;
     }
 }
+

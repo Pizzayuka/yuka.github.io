@@ -4,14 +4,13 @@ body{
 }
 
 .flex-container {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     max-width:80vw; 
     margin:0 auto; 
     justify-content: center;
     align-items: center;
 }
-
 .grid-container{
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -27,70 +26,39 @@ svg{
 }
 
 .buttons{
-    margin-top: 93vw;    
+    margin-top: 365vw;    
 }
-
 section, header, footer {
     display: flex;
     flex-direction: column;
     /* max-width: 1000px; */
     width: 70vw;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border-left: 1px solid black;
+    border-right: 1px solid black;
     justify-content: center;
 }
 
 
-.header {
-    height:50vw;
-    min-height: 100vw;
+
+p{
+    font-size: 20px;
+    padding: 1rem;
+    margin: 0;
+    padding: 5vw;
 }
 
-.footer{
-    height: 5vw;
-    min-height: 200px;
+header {
+    border-top: 1px solid black;
+}
+
+footer{
+    border-bottom: 1px solid black;
 }
 
 
-.line1{
-    box-sizing: border-box;
-    padding: 1rem 2rem;
-    height: 10px;
-    transition: 0.2s ease all;
-    font-size: 0px;
-    max-width: 68vw;
-    border-top: 0;
-}
-  
-.line-one{
-    box-sizing: border-box;
-    padding: 1rem 2rem;
-    height: 10px;
-    transition: 0.2s ease all;
-    font-size: 0px;
-    max-width: 68vw;
-    border-top: 0;
-    border-bottom: 0;
-}
 
-header:hover + .line1{
-    height: 200px;
-    font-size: 1rem;
-}
 
-.line1:hover{
-    height: 200px;
-    font-size: 1rem;
-}
-
-.line1:hover + .line-one{
-    height: 200px;
-    font-size: 1rem;
-}
-
-.line2{
-    height: 200px;
-    font-size: 1rem;
-}
 
 h1{
     font-family: baskerville;
@@ -116,9 +84,8 @@ a{
 }
 
 a:hover{
-    color: darkblue; 
+    color: darkblue;
 }
-
 
 @media (max-width: 1000px) { 
     body { 
@@ -126,30 +93,25 @@ a:hover{
       color:  white;
       text-align: left;
     }
-
-    section, header, footer{
-        border: none;
-    }
-
     a{
         color: white;
     }
 
     a:hover{
-        color: black;
+        color:  darkblue;
     }
 
     h2{
         margin-left: 5vw;
     }
     
-    footer{
-        text-shadow: none;
-    }
-
     #back-button, #foward-button{
         fill: white;
     }
-}
 
+    .buttons{
+        margin-top: 5780px;
+    }
+    
+}
 
