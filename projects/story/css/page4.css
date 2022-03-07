@@ -1,6 +1,23 @@
 body{
     font-family: american typewriter;
     text-align: center;
+    background-color: rgb(253, 253, 230);
+}
+
+h1{
+    color: orangered;
+}
+
+h2{
+    color: darkblue;
+}
+
+#back-button, #foward-button{
+    fill: orangered;
+}
+
+#back-button:hover, #foward-button:hover{
+    fill: darkblue;
 }
 
 .flex-container {
@@ -21,9 +38,7 @@ svg{
     height: 7vw;
 }
 
-#back-button:hover, #foward-button:hover{
-    fill: darkblue;
-}
+
 
 .buttons{
     margin-top: 142vw;  
@@ -36,6 +51,7 @@ section, header, footer {
     width: 70vw;
     border: 1px solid black;
     justify-content: center;
+    background-color: white;
 }
 
 
@@ -148,6 +164,14 @@ a:hover{
       color:  white;
       text-align: left;
     }
+
+    section, header, footer{
+        border: none;
+        background-color: black;
+    }
+
+    
+
     a{
         color: white;
     }
@@ -165,7 +189,7 @@ a:hover{
     }
 
     #back-button, #foward-button{
-        fill: white;
+        fill: orangered;
     }
 
     .line3{
@@ -178,14 +202,20 @@ a:hover{
 
     .line3:hover + .line4{
         min-height: 250px;
+        border: 1px solid white;
+        border-radius: 50px;
     }
 
     .line4:hover{
         min-height: 250px;
+        border: 1px solid white;
+        border-radius: 50px;
     }
 
     .line4:hover + .line-four{
         min-height: 200px;
+        border: 1px solid white;
+        border-radius: 50px;
     }
 
     .buttons{

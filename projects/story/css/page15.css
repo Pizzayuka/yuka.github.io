@@ -1,7 +1,17 @@
 body{
     font-family: american typewriter;
     text-align: center;
+    background-color: rgb(253, 253, 230);
 }
+
+h1{
+    color: orangered;
+}
+
+h2{
+    color: darkblue;
+}
+
 
 .flex-container {
     display: flex;
@@ -20,7 +30,9 @@ body{
 svg{
     height: 7vw;
 }
-
+#back-button, #foward-button{
+    fill: orangered;
+}
 #back-button:hover, #foward-button:hover{
     fill: darkblue;
 }
@@ -37,6 +49,7 @@ section, header, footer {
     border-left: 1px solid black;
     border-right: 1px solid black;
     justify-content: center;
+    background-color: white;
 }
 
 
@@ -93,6 +106,11 @@ a:hover{
       color:  white;
       text-align: left;
     }
+    
+    section,header,footer{
+        background-color: black;
+    }
+
     a{
         color: white;
     }
@@ -105,9 +123,7 @@ a:hover{
         margin-left: 5vw;
     }
     
-    #back-button, #foward-button{
-        fill: white;
-    }
+    
 
     .buttons{
         margin-top: 5780px;
