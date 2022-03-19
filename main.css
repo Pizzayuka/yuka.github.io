@@ -1,4 +1,13 @@
+body{
+    background-image: url(http://scri8e.com/stars/bgs/GA_NO_DIRECT_LINKING/4whyt2.gif);
+    color: white;
+}
 .flexbox{
     display: flex;
     flex-direction: column;
 }
+
+model-viewer {
+    width: 100vw;
+    height: 100vh;
+  }
