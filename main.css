@@ -46,14 +46,14 @@ img{
 }
 
 
-#arrow1, #arrow2, #arrow3, #arrow4{
-   width: 7vw;
+#arrow1, #arrow2, #arrow3, #arrow4, #arrow5{
+   width: 5vw;
    margin: 20px;
    margin-left: 50px;
    fill: #213068;
 }
 
-#arrow1:hover, #arrow2:hover, #arrow3:hover, #arrow4:hover{
+#arrow1:hover, #arrow2:hover, #arrow3:hover, #arrow4:hover, #arrow5:hover{
     fill: #EB0974;
 }
 
@@ -119,7 +119,7 @@ img{
     background-color: #F8C24A;
 }
 
-#link1, #link2, #link3, #link4{
+#link1, #link2, #link3, #link4, #link5{
     width: 30vw;
     font-size: 2rem;
     position: absolute;

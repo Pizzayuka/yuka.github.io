@@ -35,6 +35,13 @@ $(document).ready(function(){
         $("#link4").css("display", "none");
       });
 
+      $("#arrow5").mouseover(function(){
+        $("#link5").css("display", "block");
+      });
+      $("#arrow5").mouseout(function(){
+        $("#link5").css("display", "none");
+      });
+
       $("#star").mouseover(function(){
         $("#lab").css("display", "block");
       });
