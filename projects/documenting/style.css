@@ -1,0 +1,65 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    position: fixed;
+    z-index: 2;
+    width: 99vw;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+img{
+    width: 30vw;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    transition: 0.5s ease all;
+}
+
+img:hover{
+    width: 80vw
+}
+
+button {
+    left: 0px; 
+    margin-top: 0;
+    height: 35px;
+    text-align: center;
+    padding:10px;
+    border: 1px solid white;
+    border-radius: 25px;
+    width: 35px;
+    background-color: white;
+    transition: 1s ease all;
+    overflow: hidden;
+    color: white;
+    text-transform: uppercase;
+    font-family: serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+button:hover{
+    width: 35vw;
+    height: 10vw;
+    border-radius: 60px;
+    background-color: transparent;
+    font-size: 25px;
+}
+
+#link:hover{
+    cursor: pointer;
+}
