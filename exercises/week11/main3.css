@@ -1,0 +1,69 @@
+
+body {
+    background-color:  #c5b6b6;
+    margin: 0;
+  }
+  
+  .garden {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+  }
+  
+  .flower {
+    font-family: arial;
+    display: flex;
+    padding: 50px;
+    border: 2px solid black;
+    color: white;
+    width: 120px;
+  }
+  
+  
+  .Dahlia {
+    background-color: red;
+    background-image: url("imgs/dahlia.jpg");
+    background-size: 90px;
+    background-position: center;
+    background-repeat: repeat;
+  }
+  
+  .Poppy {
+    background-color: pink;
+    background-image: url("imgs/poppy.jpg");
+    background-size: 90px;
+    background-position: center;
+    background-repeat: repeat;
+  }
+  
+  .Snapdragon {
+    background-color:  yellow;
+    background-image: url("imgs/snapdragon.jpg");
+    background-size: 90px;
+    background-position: center;
+    background-repeat: repeat;
+  }
+  
+  .Ranunculus {
+    background-color:  powderblue;
+    background-image: url("imgs/ranunculus.jpg");
+    background-size: 90px;
+    background-position: center;
+    background-repeat: repeat;
+  }
+  
+  .Anthurium {
+    background-color: blue;
+    background-image: url("imgs/anthurium.jpg");
+    background-size: 90px;
+    background-position: center;
+    background-repeat: repeat;
+  }
+  
+  .Rose {
+    background-color: green;
+    background-image: url("imgs/rose.jpg");
+    background-size: 90px;
+    background-position: center;
+    background-repeat: repeat;
+  }
