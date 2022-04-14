@@ -1,5 +1,6 @@
 
 body {
+  background-color: black;
     margin: 50px;
     display: flex;
     /* This centers our sketch horizontally. */
