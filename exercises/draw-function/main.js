@@ -1,5 +1,11 @@
+
+var slider;
+
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    let canvas =  createCanvas(windowWidth, windowHeight);
+    canvas.position(0,0);
+
+  
     slider = createSlider(10, 1000, 0);
     slider.class("slider");
   }
@@ -7,15 +13,15 @@ function setup() {
   function draw() {
    randR = round(random([0],[255]));
      randG = round(random([0],[255]));
-     randB = round(random([0],[255]));
+     randB = round(random([0],[255]));      
   
   
     fill(randR, randG, randB);
-    strokeWeight(4);
-  ellipseMode(CENTER);
-    ellipse(mouseX, mouseY,slider.value(), slider.value());
+    strokeWeight(2);
+  // ellipseMode(CENTER);
+    ellipse(windowWidth/2, windowHeight/2,slider.value(), slider.value());
   }
   
   function mousePressed(){
-    background("white")
+    background("black")
   }
