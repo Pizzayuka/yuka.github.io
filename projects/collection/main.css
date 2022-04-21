@@ -1,0 +1,83 @@
+@font-face {
+    font-family: ferritecoredx-medium;
+    src: url(assets/FerriteCoreDX-Medium.ttf);
+}
+@font-face {
+    font-family: ferritecoredx-regular;
+    src: url(assets/FerriteCoreDX-Regular.ttf);
+}
+
+body{
+    background-color: #6398af; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: whitesmoke;
+}
+.top-bar{
+    position: absolute;
+    top: 10px;
+    font-family: ferritecoredx-regular;
+}
+.everything{
+    width: 100vw;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+}
+
+.side-bar{
+    grid-template-columns: 1/2;
+    font-family: ferritecoredx-regular;
+    font-family: dogma-bold-script,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    width: 20vw;
+}
+
+.menu{
+    grid-template-columns: 2/3;
+    width: 10vw;
+    border-right: 1px solid whitesmoke;
+    font-family: dogma-bold-script, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+.wrapper{
+    grid-template-columns: 3;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.entry{
+    font-family: ocr-a-std;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.1em;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid whitesmoke;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50vw;
+}
+
+
+.bdayimage{
+    height: 100px;
+    width: 100px;
+    border: 1px solid whitesmoke;
+    border-radius: 25px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
