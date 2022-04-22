@@ -64,18 +64,20 @@ function showBirthdays() {
 
 
      let imageHolder = document.createElement("div");
-     imageHolder.style.backgroundImage = birthday.fields.img[0].url;
+     let bdayImageField = birthday.fields.img[0];
+     imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
      imageHolder.classList.add("bdayimage");
      birthdayTextHolder.appendChild(imageHolder);
+   
 
-     let birthdayListHolder = document.createElement("li");
-     birthdayListHolder.classList.add("dates");
-     birthdayListHolder.innerText = birthday.fields.dates;
-      menu.appendChild(birthdayListHolder);
+     if ( {bdayImageField} = BLANK() ) {
+      imageHolder.style.backgroundColor = "red";
+   }
+     
 
-    let runTheseText = document.createElement("p");
-    runTheseText.innerText = "Happy Birthday" + birthday.fields.maincharacter;
-    foot.appendChild(runTheseText);
+    // let runTheseText = document.createElement("p");
+    // runTheseText.innerText = "Happy Birthday" + birthday.fields.maincharacter;
+    // foot.appendChild(runTheseText);
 
     //  let videoHolder = document.createElement("video");
     //  videoHolder.src = tiktok.fields.video[0].url;

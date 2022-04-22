@@ -32,17 +32,10 @@ body{
     font-weight: 700;
     font-style: normal;
     font-size: 2rem;
-    width: 20vw;
+    width: 15vw;
+    text-align: right;
 }
 
-.menu{
-    grid-template-columns: 2/3;
-    width: 10vw;
-    border-right: 1px solid whitesmoke;
-    font-family: dogma-bold-script, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
 
 
 
@@ -81,3 +74,11 @@ body{
     background-size: cover;
 }
 
+
+.bdayimage:hover{
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+    transition: 0.2s ease all;
+
+}
