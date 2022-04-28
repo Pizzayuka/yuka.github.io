@@ -63,16 +63,17 @@ let birthdayEntryHolder = document.createElement("div");
 birthdayEntryHolder.classList.add("entry");
 wrapper.appendChild(birthdayEntryHolder);
 
-let datesFields = birthday.fields.dates
-if (datesFields.contains("January 30,  2002")) {
-  imageHolder.classList.add("jan30");
-}
+
 
 // loop through the books, create an h2 for each one, and add it to the page
 function showBirthdays() {
   console.log("showBirthdays()");
   birthdays.forEach((birthday) => {
 
+    // let datesFields = birthday.fields.dates
+    // if (datesFields.contains("January 30,  2002")) {
+    //   imageHolder.classList.add("jan30");
+    // }
     // let birthdayHolder = document.createElement("div");
     // birthdayHolder.classList.add("bybday");
     // birthdayHolder.innerText = birthday.fields.maincharacter;
@@ -102,6 +103,7 @@ function showBirthdays() {
      let imageHolder = document.createElement("div");
      let bdayImageField = birthday.fields.img[0];
      imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
+     imageHolder.style.backgroundColor = "#EEE6E3";
      imageHolder.classList.add("bdayimage");
      birthdayEntryHolder.appendChild(imageHolder);
     } else if(birthday.fields.img){
@@ -110,34 +112,54 @@ function showBirthdays() {
     }
    
    
-
-    // let filterBday = document.querySelector(".bdayfiltery");
-    // let filterZodiac = document.querySelector(".zodiacfilter");
-    // filterBday.addEventListener("click", function(){
-    //   if (videoHolder.classList.contains("spirituality")) {
-    //     videoHolder.style.display = "block";
-    //     spiritualitybutton.classList.add("active");
-    //   } else {
-    //     videoHolder.style.display = "none";
-    //   }
-    // });
-
     //  if ( {bdayImageField} = BLANK() ) {
     //   bdayimage.style.display = "none";
     // }
      
 
-    // let runTheseText = document.createElement("p");
-    // runTheseText.innerText = "Happy Birthday" + birthday.fields.maincharacter;
-    // foot.appendChild(runTheseText);
+    let infoHolder = document.querySelector(".foot");
 
-    //  let videoHolder = document.createElement("video");
-    //  videoHolder.src = tiktok.fields.video[0].url;
-    //  videoHolder.classList.add("tiktokVideo");
-    //  videoHolder.muted = true;
-    //  videoHolder.autoplay = true;
-    //  videoHolder.loop = true;
-    //  tiktokTextHolder.appendChild(videoHolder);
+
+    
+    const bdayDates = 'Birthday: ' + birthday.fields.dates;
+    let bdayInfoDates = document.createElement("div");
+    // bdayInfoDates.classList.add("bday-dates");
+    bdayInfoDates.innerText = bdayDates;
+    infoHolder.appendChild(bdayInfoDates);
+
+    const bdayInfoText = 'Birthday person: ' + birthday.fields.maincharacter;
+    let bdayInfo = document.createElement("div");
+    // bdayInfo.classList.add("bdayinfo");
+    bdayInfo.innerText = bdayInfoText;
+    infoHolder.appendChild(bdayInfo);
+
+    const bdayEntry = 'Entry by: ' + birthday.fields.entriesby;
+    let bdayInfoEntry = document.createElement("div");
+    // bdayInfoEntry.classList.add("bday-entry");
+    bdayInfoEntry.innerText = bdayEntry;
+    infoHolder.appendChild(bdayInfoEntry);
+
+    const bdayYear = 'Year taken: ' + birthday.fields.year;
+    let bdayInfoYear = document.createElement("div");
+    // bdayInfoYear.classList.add("bday-year");
+    bdayInfoYear.innerText = bdayYear;
+    infoHolder.appendChild(bdayInfoYear);
+
+    const bdayComment = 'Description: ' + birthday.fields.description;
+    let bdayInfoComment = document.createElement("div");
+    // bdayInfoComment.classList.add("bday-comment");
+    bdayInfoComment.innerText = bdayComment;
+    infoHolder.appendChild(bdayInfoComment);
+
+
+  //   imageHolder.addEventListener("click", function(){
+  //     bdayInfoDates.classList.toggle("selected");
+  //     bdayInfo.classList.toggle("selected");
+  //     bdayInfoEntry.classList.toggle("selected");
+  //     bdayInfoYear.classList.toggle("selected");
+  //     bdayInfoComment.classList.toggle("selected");
+  // })
+
   });
 
   let sortByBday = document.querySelector(".bdayfilter")
@@ -184,4 +206,21 @@ function showBirthdays() {
         }
       });
 }
+
+let home = document.querySelector(".logo")
+home.addEventListener("click", function(){
+  window.location.reload();
+})
+
+var x = document.getElementById("myAudio"); 
+var playing = false;
+function playAudio() { 
+  if (playing === false){
+    x.play(); 
+    playing = true;
+  } else if(playing === true){
+    x.pause(); 
+    playing = false;
+  }
+} 
 

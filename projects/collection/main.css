@@ -11,54 +11,135 @@ body{
     background-color: #6398afaf; 
     background-size: cover;
     background-repeat: no-repeat;
-    color: whitesmoke;
+    color: #EEE6E3;
 }
+
+.logo{
+    margin: 5px;
+    width: 30vw;
+    height: 10vh;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
 .top-bar{
     margin: 0;
     width: 100vw;
-    height: 40px;
+    height: 20px;
     background-color: #6398AF;
+    color: #366275;
     position: absolute;
     top: -10px;
     font-family: ferritecoredx-regular;
+    font-size: .8em;
+    /* letter-spacing: -3px;    */
     padding: 10px;
+    display: flex;
+    /* justify-content: flex-end; */
 }
+
+#about{
+    width: auto;
+    align-self: flex-end;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    /* margin: 0 auto;  */
+    animation: 
+      typing 4s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
 .top-bar-tab{
     width: 20vw;
-    height: 100px;
+    height: 90px;
     background-color: #6398AF;
     position: absolute;
     top:0;
-    border-radius: 25px;
-    z-index: -10;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    z-index: 10;
     font-family: ferritecoredx-regular;
     font-size: 1rem;
     padding: 10px;
     display: flex;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
-.top-bar-tab span{
-    align-self: flex-end;
+.tune{
+    position: absolute;
+    top: 40px;
+    left: 20vw;
+    width: 20vw;
+    height: 40px;
+    border-bottom: 1.5px solid #6398AF ;
+    z-index: -1;
 }
 
+.tune-button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: 1.5px solid #6398AF ;
+    background-color: #93B9C9;
+    position: absolute;
+    top: 70px;
+    left: 39.7vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+.pill{
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
 .foot{
     margin: 0;
     width: 100vw;
     height: 190px;
+    color:#050c30;
     background-color: #6398AF;
     position: absolute;
     bottom: -100px;
-    font-family: ferritecoredx-regular;
+    font-family: ocr-a-std;
+    font-weight: 400;
+    font-style: normal;
+    font-size:1rem ;
+    line-height: 2vw;
+    letter-spacing: -3px;
     padding: 10px;
-    z-index: 101;
-
+    z-index: 102;
 }
 
 .foot-tab{
     margin: 0;
     width: 40vw;
-    height: 200px;
+    height: 150px;
     border-radius: 25px;
+    color:#366275;
     background-color: #6398AF;
     position: absolute;
     bottom: 0px;
@@ -66,7 +147,6 @@ body{
     font-size: 1rem;
     padding: 10px;
     z-index: 101;
-
 }
 
 .everything{
@@ -80,18 +160,18 @@ body{
     position: absolute;
     margin-top: 15%;
     grid-template-columns: 1/2;
-    font-family: ferritecoredx-regular;
     font-family: dogma-bold-script,sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 2.5vw;
+    height: 5vw;
     width: 15vw;
     text-align: right;
 }
 
 .buttons{
     margin-bottom: 30px;
-    border: 3px solid whitesmoke ;
+    border: 3px solid #EEE6E3 ;
     border-radius: 25px;
     width: 20vw;
     margin-left: -50px;
@@ -123,7 +203,7 @@ body{
 }
 
 .entry{
-    background-color: white;
+    /* background-color: white; */
     font-family: ocr-a-std;
     font-weight: 400;
     font-style: normal;
@@ -131,35 +211,37 @@ body{
     font-size: 2rem;
     display: flex;
     flex-wrap: wrap;
-    border: 3px solid #050c30;
+    /* border: 3px solid #050c30; */
     border-radius: 25px;
-    padding: 10px;
-    width: 50vw;
-    height:40vw;
+    padding: 0px;
+    width: 40vw;
+    height:45vw;
     /* overflow-x: scroll; */
     overflow: scroll;
     justify-content: center;
-    margin-left: -10px;
+    margin-left: 50px;
+    margin-top: -40px;
 }
 
 
 .menu-bday{
-    grid-column:1/3 ;
+    grid-column:2/3 ;
     display: grid;
     grid-template-columns:repeat(4, 1fr) ;   
     grid-template-rows:repeat(4, 1fr) ;   
-    margin-left: 20vw;
+    margin-left: 22vw;
     margin-top: 180px;
     width: 20vw;
     height: 20vw;
     font-family: dogma-bold-script,sans-serif;
     font-size: 1.3vw;
     opacity: 0;
-    /* background-color: black; */
+    justify-content: center;
+
 }
 
 .menu-bday span{
-    border: 3px solid whitesmoke;
+    border: 3px solid #EEE6E3;
     border-radius: 20px;
     width: 20px;
     height: 20px;
@@ -175,25 +257,22 @@ body{
 
 .menu-zodiac{
     position: absolute;
-    grid-column:1/3 ;
+    grid-column:2/3 ;
     display: grid;
     grid-template-columns:repeat(4, 1fr) ;   
     grid-template-rows:repeat(4, 1fr) ;   
-    margin-left: 20vw;
+    margin-left: 22vw;
     margin-top: 180px;
     width: 20vw;
     height: 20vw;
     font-family: dogma-bold-script,sans-serif;
     font-size: 1.3vw;
     display: none;
+    justify-content: center;
 }
-/* .active{
-    background-image: none;
-    opacity: 1;
-    z-index: 200;
-} */
+
 .menu-zodiac span{
-    border: 3px solid whitesmoke;
+    border: 3px solid #EEE6E3;
     border-radius: 20px;
     width: 20px;
     height: 20px;
@@ -208,11 +287,11 @@ body{
 
 .menu-entry{
     position: absolute;
-    grid-column:1/3 ;
+    grid-column:2/3 ;
     display: grid;
     grid-template-columns:repeat(4, 1fr) ;   
     grid-template-rows:repeat(4, 1fr) ;   
-    margin-left: 20vw;
+    margin-left: 22vw;
     margin-top: 180px;
     width: 20vw;
     height: 20vw;
@@ -222,7 +301,7 @@ body{
 }
 
 .menu-entry span{
-    border: 3px solid whitesmoke;
+    border: 3px solid #EEE6E3;
     border-radius: 20px;
     width: 20px;
     height: 20px;
@@ -237,7 +316,6 @@ body{
 }
 
 .bdayimage{
-    margin: 50px;    
     height: 100px;
     width: 100px;
     border-radius: 20px;
@@ -278,4 +356,17 @@ body{
     50%{transform: scale(0.9)}
    
     100% { transform: scale(1); }
+  }
+
+  /* .bdayperson{
+      display: none;
+  } */
+
+  .active{
+    display:block;
+  }
+
+  .bdayinfo{
+      display: flex;
+      flex-direction: column;
   }
