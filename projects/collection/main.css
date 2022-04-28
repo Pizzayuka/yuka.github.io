@@ -16,8 +16,8 @@ body{
 
 .logo{
     margin: 5px;
-    width: 30vw;
-    height: 10vh;
+    width: 19.5vw;
+    height: auto;
     align-self: flex-end;
     cursor: pointer;
 }
