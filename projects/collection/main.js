@@ -41,20 +41,23 @@ function gotAllBirthdays(err) {
   }
 
   // call functions to log and show the books
-  consoleLogBirthdays();
+  // consoleLogBirthdays();
   showBirthdays();
   // listDates();
 }
 
 // // just loop through the books and console.log them
-function consoleLogBirthdays() {
-  console.log("consoleLogBirthdays()");
-  birthdays.forEach((birthday) => {
-    console.log("Birthday:", birthday);
-  });
-}
+// function consoleLogBirthdays() {
+//   console.log("consoleLogBirthdays()");
+//   birthdays.forEach((birthday) => {
+//     console.log("Birthday:", birthday);
+//   });
+// }
 
-
+// function deleteShit () {
+//   document.getElementsByClassName('wrapper').innerHTML="";
+//   console.log('shit deleted bro');
+// }
 
 // loop through the books, create an h2 for each one, and add it to the page
 function showBirthdays() {
@@ -64,66 +67,70 @@ function showBirthdays() {
     birthdayEntryHolder.classList.add("entry");
      wrapper.appendChild(birthdayEntryHolder);
 
-     if (birthday.fields.img) {
-           let imageHolder = document.createElement("div");
-           let bdayImageField = birthday.fields.img[0];
-           imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
-           imageHolder.style.backgroundColor = "#EEE6E3";
-           imageHolder.classList.add("bdayimage");
-           birthdayEntryHolder.appendChild(imageHolder);
+    if (birthday.fields.img) {
+      let imageHolder = document.createElement("div");
+      let bdayImageField = birthday.fields.img[0];
+      imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
+      imageHolder.style.backgroundColor = "#EEE6E3";
+      imageHolder.classList.add("bdayimage");
 
-           birthdayEntryHolder.addEventListener("click", showInfo);
-            var isSelected = false;
-            let zoomImg = document.querySelector(".zoom")
+      birthdayEntryHolder.appendChild(imageHolder);
+      
+      // birthdayEntryHolder.addEventListener("click", showInfo);
+      // var isSelected = false;
+      // let zoomImg = document.querySelector(".zoom")
 
-            function showInfo(){
+      // function showInfo() {
 
-              if(isSelected === false){
-                console.log("selected img")
-              imageHolder.style.backgroundImage = "none";
-              imageHolder.style.backgroundColor = "orangered";
-              zoomImg.style.backgroundImage = "url(" + bdayImageField.url + ")";
-              zoomImg.classList.add("active-img");
-              bdayInfoDates.style.display ="block";
-              bdayInfo.style.display ="block";
-              bdayInfoEntry.style.display ="block";
-              bdayInfoYear.style.display ="block";
-              bdayInfoComment.style.display ="block";
 
-              isSelected = true
+      //   if(isSelected === false){
+      //     console.log("selected img")
+      //   imageHolder.style.backgroundImage = "none";
+      //   imageHolder.style.backgroundColor = "orangered";
+      //   zoomImg.style.backgroundImage = "url(" + bdayImageField.url + ")";
+      //   zoomImg.classList.add("active-img");
+      //   bdayInfoDates.style.display ="block";
+      //   bdayInfo.style.display ="block";
+      //   bdayInfoEntry.style.display ="block";
+      //   bdayInfoYear.style.display ="block";
+      //   bdayInfoComment.style.display ="block";
 
-              } else if(isSelected === true){
-                imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
-                imageHolder.style.backgroundColor = "#EEE6E3";
-                zoomImg.style.backgroundImage = "none";
-                zoomImg.classList.remove("active-img");
-                bdayInfoDates.style.display ="none";
-                bdayInfo.style.display ="none";
-                bdayInfoEntry.style.display ="none";
-                bdayInfoYear.style.display ="none";
-                bdayInfoComment.style.display ="none";
-              
-                isSelected = false;
-              }
-              
-            }
+      //   isSelected = true
 
-          } else if(birthday.fields.img){
-            imageHolder.style.display = "none";
-          }
-          
-    // imageHolder.addEventListener("click", showInfo);
+      //   } else if(isSelected === true){
+      //     imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
+      //     imageHolder.style.backgroundColor = "#EEE6E3";
+      //     zoomImg.style.backgroundImage = "none";
+      //     zoomImg.classList.remove("active-img");
+      //     bdayInfoDates.style.display ="none";
+      //     bdayInfo.style.display ="none";
+      //     bdayInfoEntry.style.display ="none";
+      //     bdayInfoYear.style.display ="none";
+      //     bdayInfoComment.style.display ="none";
+        
+      //     isSelected = false;
+      //   }
+        
+      // }
+      birthdayEntryHolder.addEventListener("click", showInfo, );
+      
+      function showInfo(){
+  
+        if(birthdayEntryHolder.classList.contains("selected-img")) {
+          birthdayEntryHolder.querySelector("selected-img").classList.toggle("selected-img");
+          birthdayEntryHolder.classList.add("deselected-img");
 
-    // function showInfo(){
-    //   imageHolder.classList.toggle("active-img");
-    // }
-    // let indivisudalImg = document.querySelector("bdayimage");
-    // indivisudalImg.addEventListener("click", showInfo);
+        }
+        birthdayEntryHolder.classList.toggle("selected-img")
+      }
 
-    // function showInfo(){
-    //   console.log("selected img")
-    //   // indivisudalImg.classList.toggle("active-img");
-    // }
+    } else if(birthday.fields.img){
+      imageHolder.style.display = "none";
+    }
+
+
+
+
 
     let infoHolder = document.querySelector(".foot");
 
@@ -185,175 +192,59 @@ function showBirthdays() {
 }
 
 
-// Yuka old code
+// setting references to nav buttons
+let sortByBday = document.querySelector(".bdayfilter")
+let menuByBday = document.querySelector(".menu-bday")
 
-// let birthdayEntryHolder = document.createElement("div");
-// birthdayEntryHolder.classList.add("entry");
-// wrapper.appendChild(birthdayEntryHolder);
+let sortByZodiac = document.querySelector(".zodiacfilter")
+let menuByZodiac = document.querySelector(".menu-zodiac")
 
-
-
-// // loop through the books, create an h2 for each one, and add it to the page
-// function showBirthdays() {
-//   console.log("showBirthdays()");
-//   birthdays.forEach((birthday) => {
-
-//     // let datesFields = birthday.fields.dates
-//     // if (datesFields.contains("January 30,  2002")) {
-//     //   imageHolder.classList.add("jan30");
-//     // }
-//     // let birthdayHolder = document.createElement("div");
-//     // birthdayHolder.classList.add("bybday");
-//     // birthdayHolder.innerText = birthday.fields.maincharacter;
-//     // entry.appendChild(birthdayHolder);
-
-
-//     //  let menuHolder = document.createElement("span");
-//     //  menuHolder.innerText = birthday.fields.zodiac;
-//     //  menuHolder.classList.add("bdayperson");
-//     //  menuSelectionHolder.appendChild(menuHolder);
-
-
-//     //  let charactertype = birthday.fields.maincharacter;
-//     //  charactertype.forEach(function(maincharacter) {
-//     //    let charactertypeClassName = slugify(maincharacter);
-//     //    console.log('charactertypeClassName', charactertypeClassName);
-//     //    birthdayEntryHolder.classList.add(charactertypeClassName);
-//     //  });
-
-//     //  if (birthdayEntryHolder.classList.contains("Alexander Soukakos")) {
-//     //   imageHolder.classList.add("alex");
-//     // } 
-
-
-
-//     if (birthday.fields.img) {
-//      let imageHolder = document.createElement("div");
-//      let bdayImageField = birthday.fields.img[0];
-//      imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
-//      imageHolder.style.backgroundColor = "#EEE6E3";
-//      imageHolder.classList.add("bdayimage");
-//      birthdayEntryHolder.appendChild(imageHolder);
-//     } else if(birthday.fields.img){
-//       imageHolder.style.display = "none";
-
-//     }
-   
-   
-//     //  if ( {bdayImageField} = BLANK() ) {
-//     //   bdayimage.style.display = "none";
-//     // }
-     
-
-//     let infoHolder = document.querySelector(".foot");
-
-
-    
-//     const bdayDates = 'Birthday: ' + birthday.fields.dates;
-//     let bdayInfoDates = document.createElement("div");
-//     // bdayInfoDates.classList.add("bday-dates");
-//     bdayInfoDates.innerText = bdayDates;
-//     infoHolder.appendChild(bdayInfoDates);
-
-//     const bdayInfoText = 'Birthday person: ' + birthday.fields.maincharacter;
-//     let bdayInfo = document.createElement("div");
-//     // bdayInfo.classList.add("bdayinfo");
-//     bdayInfo.innerText = bdayInfoText;
-//     infoHolder.appendChild(bdayInfo);
-
-//     const bdayEntry = 'Entry by: ' + birthday.fields.entriesby;
-//     let bdayInfoEntry = document.createElement("div");
-//     // bdayInfoEntry.classList.add("bday-entry");
-//     bdayInfoEntry.innerText = bdayEntry;
-//     infoHolder.appendChild(bdayInfoEntry);
-
-//     const bdayYear = 'Year taken: ' + birthday.fields.year;
-//     let bdayInfoYear = document.createElement("div");
-//     // bdayInfoYear.classList.add("bday-year");
-//     bdayInfoYear.innerText = bdayYear;
-//     infoHolder.appendChild(bdayInfoYear);
-
-//     const bdayComment = 'Description: ' + birthday.fields.description;
-//     let bdayInfoComment = document.createElement("div");
-//     // bdayInfoComment.classList.add("bday-comment");
-//     bdayInfoComment.innerText = bdayComment;
-//     infoHolder.appendChild(bdayInfoComment);
-
-
-//     imageHolder.addEventListener("click", show);
-
-//   //  function show() {
-//   //       bdayInfoDates.classList.toggle("selected");
-//   //       // bdayInfo.classList.toggle("selected");
-//   //       // bdayInfoEntry.classList.toggle("selected");
-//   //       // bdayInfoYear.classList.toggle("selected");
-//   //       // bdayInfoComment.classList.toggle("selected");
-//   //   }
-
-
-//   });
-
-
-
-  let sortByBday = document.querySelector(".bdayfilter")
-  let menuByBday = document.querySelector(".menu-bday")
-
-  let sortByZodiac = document.querySelector(".zodiacfilter")
-  let menuByZodiac = document.querySelector(".menu-zodiac")
-
-  let sortByEntry = document.querySelector(".entryfilter")
-  let menuByEntry = document.querySelector(".menu-entry")
+let sortByEntry = document.querySelector(".entryfilter")
+let menuByEntry = document.querySelector(".menu-entry")
 
   sortByBday.addEventListener("click", showBdayMenu);
-
   function showBdayMenu() {
-    
-      console.log("activate bday button");
-      menuByBday.classList.add("active");
-      menuByBday.classList.remove("hide");
-      sortByBday.classList.add("active-button");
-      menuByZodiac.classList.remove("active");
-      menuByZodiac.classList.add("hide");
-      sortByZodiac.classList.remove("active-button");
-      menuByEntry.classList.remove("active");
-      menuByEntry.classList.add("hide");
-      sortByEntry.classList.remove("active-button");
-      
+    console.log("activate bday button");
+    menuByBday.classList.add("active");
+    menuByBday.classList.remove("hide");
+    sortByBday.classList.add("active-button");
+    menuByZodiac.classList.remove("active");
+    menuByZodiac.classList.add("hide");
+    sortByZodiac.classList.remove("active-button");
+    menuByEntry.classList.remove("active");
+    menuByEntry.classList.add("hide");
+    sortByEntry.classList.remove("active-button");
   }
 
+  sortByZodiac.addEventListener("click", showZodiacMenu);
+  function showZodiacMenu() {
 
-    sortByZodiac.addEventListener("click", showZodiacMenu);
+    console.log("activate zodiac button");
+    menuByZodiac.classList.add("active");
+    menuByZodiac.classList.remove("hide");
+    sortByZodiac.classList.add("active-button");
+    menuByBday.classList.remove("active");
+    menuByBday.classList.add("hide");
+    sortByBday.classList.remove("active-button");
+    menuByEntry.classList.remove("active");
+    menuByEntry.classList.add("hide");
+    sortByEntry.classList.remove("active-button");
 
-    function showZodiacMenu() {
+  }
 
-      console.log("activate zodiac button");
-      menuByZodiac.classList.add("active");
-      menuByZodiac.classList.remove("hide");
-      sortByZodiac.classList.add("active-button");
-      menuByBday.classList.remove("active");
-      menuByBday.classList.add("hide");
-      sortByBday.classList.remove("active-button");
-      menuByEntry.classList.remove("active");
-      menuByEntry.classList.add("hide");
-      sortByEntry.classList.remove("active-button");
-
-    }
-
-    sortByEntry.addEventListener("click", showEntryMenu);
-
-    function showEntryMenu() {
-
-      console.log("activate entry button");
-      menuByEntry.classList.add("active");
-      menuByEntry.classList.remove("hide");
-      sortByEntry.classList.add("active-button");
-      menuByBday.classList.remove("active");
-      menuByBday.classList.add("hide");
-      sortByBday.classList.remove("active-button");
-      menuByZodiac.classList.remove("active");
-      menuByZodiac.classList.add("hide");
-      sortByZodiac.classList.remove("active-button");
-    }
+  sortByEntry.addEventListener("click", showEntryMenu);
+  function showEntryMenu() {
+    console.log("activate entry button");
+    menuByEntry.classList.add("active");
+    menuByEntry.classList.remove("hide");
+    sortByEntry.classList.add("active-button");
+    menuByBday.classList.remove("active");
+    menuByBday.classList.add("hide");
+    sortByBday.classList.remove("active-button");
+    menuByZodiac.classList.remove("active");
+    menuByZodiac.classList.add("hide");
+    sortByZodiac.classList.remove("active-button");
+  }
   
     // let bdayOne = document.querySelector("jan-thirty");
 
@@ -363,68 +254,77 @@ function showBirthdays() {
     //   bdayOne.classList.add("apply");
     // }
 
-    let dates = ["Jan 30", "Feb 2", "Feb 15", "Mar 24", "Apr 18", "May 6", "May 27", "Jun 1", "Jun 3", "Jun 14", "Jun 26", "Sep 4","Oct 20", "Nov 15", "Nov 20", "Dec 1"];
-    let datesHolder = document.querySelector(".menu-bday")
-    var arrayLength = dates.length;
-    for (var i = 0; i < arrayLength; i++) {
-        console.log(dates[i]);
+let dates = ["Jan 30", "Feb 2", "Feb 15", "Mar 24", "Apr 18", "May 6", "May 27", "Jun 1", "Jun 3", "Jun 14", "Jun 26", "Sep 4","Oct 20", "Nov 15", "Nov 20", "Dec 1"];
+let datesHolder = document.querySelector(".menu-bday")
+var arrayLength = dates.length;
 
-       let indivisualDates = document.createElement("span");
-       indivisualDates.innerText = dates[i];
-        datesHolder.appendChild(indivisualDates);
-        // indivisualDates.classList.add("");
-        indivisualDates.addEventListener("click", applyCategoryDates);
+// THE LOOP THAT HOLDS THE DATE FUNCTIONALITY
+for (var i = 0; i < arrayLength; i++) {
+  // console.log(dates[i]);
 
-        function applyCategoryDates(){
-          indivisualDates.classList.add("apply");
-        }
+  let indivisualDates = document.createElement("span");
+  indivisualDates.innerText = dates[i];
+  indivisualDates.addEventListener("click", filterByDate);
+  indivisualDates.date = dates[i];
 
-        // function sortedByBday(){
-        //   if (onlyJan30 === true) {
-        //     imageHolder.style.display = "block";
-        //     console.log("displaying only jan 30");
-        // } else if((onlyJan30 === false)){
-        //   imageHolder.style.display = "none";
-        // }
-        // }
+  datesHolder.appendChild(indivisualDates);
+}
 
-    }
+function filterByDate(e) {
+  console.log(e.currentTarget.date);
+  if(datesHolder.querySelector(".apply")) {
+    datesHolder.querySelector(".apply").classList.toggle("apply");
+  }
+  e.currentTarget.classList.toggle("apply");
+  // document.querySelector(".wrapper").innerHTML = ""
+  // console.log(birthday.fields.dates);
+}
 
-    let zodiac = ["Aries", "Taurus", "Gemini", "Cancer", "Virgo", "Libra", "Scorpio", "Sagittarius", "Aquarius"];
-    let zodiacHolder = document.querySelector(".menu-zodiac")
-    var arrayLength = zodiac.length;
-    for (var i = 0; i < arrayLength; i++) {
-        console.log(zodiac[i]);
 
-       let indivisualZodiac = document.createElement("span");
-       indivisualZodiac.innerText = zodiac[i];
-       zodiacHolder.appendChild(indivisualZodiac);
-        // indivisualDates.classList.add("");
-        indivisualZodiac.addEventListener("click", applyCategoryZodiac);
+let zodiac = ["Aries", "Taurus", "Gemini", "Cancer", "Virgo", "Libra", "Scorpio", "Sagittarius", "Aquarius"];
+let zodiacHolder = document.querySelector(".menu-zodiac")
+var arrayLength = zodiac.length;
+for (var i = 0; i < arrayLength; i++) {
+  // console.log(zodiac[i]);
 
-        function applyCategoryZodiac(){
-          indivisualZodiac.classList.add("apply");
-        }
+  let indivisualZodiac = document.createElement("span");
+  indivisualZodiac.innerText = zodiac[i];
+  indivisualZodiac.addEventListener("click", filterByZodiac);
+  indivisualZodiac.zodiac = zodiac[i];
 
-    }
+  zodiacHolder.appendChild(indivisualZodiac);
+}
 
-    let entry = ["Andrea", "Ira", "Leslie", "Noor", "Olivia", "Sidhya", "Sofia", "Yuka"];
-    let entryHolder = document.querySelector(".menu-entry")
-    var arrayLength = entry.length;
-    for (var i = 0; i < arrayLength; i++) {
-        console.log(entry[i]);
+function filterByZodiac(e) {
+  console.log(e.currentTarget.zodiac);
+  if(zodiacHolder.querySelector(".apply")) {
+    zodiacHolder.querySelector(".apply").classList.toggle("apply");
+  }
+  e.currentTarget.classList.toggle("apply");
+}
 
-       let indivisualEntry = document.createElement("span");
-       indivisualEntry.innerText = entry[i];
-       entryHolder.appendChild(indivisualEntry);
-        // indivisualDates.classList.add("");
-        indivisualEntry.addEventListener("click", applyCategoryEntry);
+let entry = ["Andrea", "Ira", "Leslie", "Noor", "Olivia", "Sidhya", "Sofia", "Yuka"];
+let entryHolder = document.querySelector(".menu-entry")
+var arrayLength = entry.length;
+for (var i = 0; i < arrayLength; i++) {
+  // console.log(entry[i]);
 
-        function applyCategoryEntry(){
-          indivisualEntry.classList.add("apply");
-        }
+  let indivisualEntry = document.createElement("span");
+  indivisualEntry.innerText = entry[i];
+  indivisualEntry.addEventListener("click", filterByEntry)
+  indivisualEntry.entry = entry[i]
 
-    }
+  entryHolder.appendChild(indivisualEntry);
+}
+
+function filterByEntry(e){
+  console.log(e.currentTarget.entry);
+  if(entryHolder.querySelector(".apply")){
+    entryHolder.querySelector(".apply").classList.toggle("apply");
+  }
+
+  e.currentTarget.classList.toggle("apply");
+}
 
     
 
@@ -465,15 +365,44 @@ home.addEventListener("click", function(){
   window.location.reload();
 })
 
-var x = document.getElementById("myAudio"); 
+var x = document.getElementById("myAudio");
+var y = document.getElementById("myAudio2");
+var z = document.getElementById("myAudio3");
+
+var songCount = 1;
+
+let bdaysongs =[x, y, z];
+var randomBdaySongs = Math.floor(Math.random() * bdaysongs.length);
+
+
 var playing = false;
 function playAudio() { 
-  if (playing === false){
-    x.play(); 
+
+  
+  songCount++
+
+  if (songCount >=4){
+  songCount = 1
+  }
+  console.log(songCount);
+
+
+
+
+   if (playing === false){
+    if(songCount == 1){
+    y.play(); 
+  } if(songCount == 2){
+    x.play();
+  } if (songCount == 3){
+    z.play();
+  }
     playing = true;
-  } else if(playing === true){
+  }
+   else if(playing === true){
     x.pause(); 
+    y.pause();
+    z.pause();
     playing = false;
   }
 } 
-

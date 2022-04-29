@@ -79,7 +79,7 @@ body{
     top:0;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    z-index: 10;
+    z-index: 100000;
     font-family: ferritecoredx-regular;
     font-size: 1rem;
     padding: 10px;
@@ -127,7 +127,7 @@ body{
   }
 
 .foot{
-    margin: 0;
+    margin: 0px;
     width: 100vw;
     height: 300px;
     color:#050c30;
@@ -137,11 +137,11 @@ body{
     font-family: ocr-a-std;
     font-weight: 400;
     font-style: normal;
-    font-size:1.3vw ;
+    font-size:3vh ;
     line-height: 2vw;
     letter-spacing: -3px;
     padding: 10px;
-    z-index: 100;
+    z-index: 10000000;
 }
 
 .foot-tab{
@@ -155,7 +155,7 @@ body{
     position: absolute;
     bottom: 10px;
     font-family: ferritecoredx-regular;
-    font-size: 1.3vw;
+    font-size: 2vh;
     padding: 10px;
     z-index: 101;
 }
@@ -213,8 +213,8 @@ body{
     flex-wrap: wrap;
     width: 40vw;
     height:99vh;
-    overflow-x: scroll;
-    /* overflow: scroll; */
+    overflow-x: visible;
+    overflow-y: scroll;
     justify-content: center;
     margin-left: 0px;
     margin-top: 10px;
@@ -320,8 +320,8 @@ body{
 
 .apply{
     color: orangered;
-    overflow: visible;
-    z-index: 100;
+    overflow: visible !important;
+    z-index: 100 !important;
 }
 
 .active{
@@ -339,15 +339,12 @@ body{
     height: 100px;
     width: 100px;
     border-radius: 20px;
+    z-index: 9000 !important;
 }
 
-/* .entry:hover{
-    width: 200px;
-    height: 200px;
-    z-index: 500;
-    animation: bounce-in 0.5s ease;
-    margin: -50px;
-} */
+.entry:hover{
+    z-index: 12000 !important;
+}
 
 .bdayimage{
     height: 100px;
@@ -366,6 +363,7 @@ body{
     width: 200px;
     height: 200px;
     z-index: 500;
+    transition:  z-index 100ms 0ms;
     animation: bounce-in 0.5s ease;
     margin: -50px;
 }
@@ -407,14 +405,15 @@ body{
   
 
   .bdayinfo{
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
   }
 
   .active-img{
-      background-size: cover;
-      background-repeat: no-repeat;
-      /* animation: tv 4s ease; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* animation: tv 4s ease; */
   }
 
   @keyframes tv {
@@ -494,3 +493,8 @@ body{
     from { width: 0 }
     to { width: 100% }
   }
+
+.selected-img{
+    background-color: orangered;
+    background-image: none;
+}
