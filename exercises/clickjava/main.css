@@ -1,0 +1,38 @@
+
+body {
+    background-color: #FFFBF8;
+    color: #12122b;
+    font-family: 'Bitter', serif;
+  }
+  
+  .wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-weight: normal;
+    text-align: center;
+    font-size: 21px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+  
+  .example {
+    height: 200px;
+    font-size: 36px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px dotted;
+    margin-bottom: 20px;
+    transition: all 600ms ease-in-out;
+  }
+  
+  .example:hover {
+    background-color: #10ff9c;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }

@@ -70,67 +70,127 @@ function showBirthdays() {
     if (birthday.fields.img) {
       let imageHolder = document.createElement("div");
       let bdayImageField = birthday.fields.img[0];
+      // imageHolder.classList.add(birthday.filds.entriesby);
       imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
       imageHolder.style.backgroundColor = "#EEE6E3";
       imageHolder.classList.add("bdayimage");
+      // imageHolder.dataset.imgName = bdayImageField.url;
 
       birthdayEntryHolder.appendChild(imageHolder);
       
-      // birthdayEntryHolder.addEventListener("click", showInfo);
+      birthdayEntryHolder.addEventListener("click", showInfo);
       // var isSelected = false;
-      // let zoomImg = document.querySelector(".zoom")
-
-      // function showInfo() {
+      let zoomImg = document.querySelector(".zoom");
 
 
-      //   if(isSelected === false){
-      //     console.log("selected img")
-      //   imageHolder.style.backgroundImage = "none";
-      //   imageHolder.style.backgroundColor = "orangered";
-      //   zoomImg.style.backgroundImage = "url(" + bdayImageField.url + ")";
-      //   zoomImg.classList.add("active-img");
-      //   bdayInfoDates.style.display ="block";
-      //   bdayInfo.style.display ="block";
-      //   bdayInfoEntry.style.display ="block";
-      //   bdayInfoYear.style.display ="block";
-      //   bdayInfoComment.style.display ="block";
+      // showing information about the img... it works but keeps selecting 
+      function showInfo(e) {
 
-      //   isSelected = true
+        // let foot = document.querySelector(".foot");
+        // while(foot.firstChild) {
+        //   foot.removeChild(foot.firstChild);
+        // }
 
-      //   } else if(isSelected === true){
-      //     imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
-      //     imageHolder.style.backgroundColor = "#EEE6E3";
-      //     zoomImg.style.backgroundImage = "none";
-      //     zoomImg.classList.remove("active-img");
-      //     bdayInfoDates.style.display ="none";
-      //     bdayInfo.style.display ="none";
-      //     bdayInfoEntry.style.display ="none";
-      //     bdayInfoYear.style.display ="none";
-      //     bdayInfoComment.style.display ="none";
+        if(bdayInfoComment.querySelector(".displaying")){
+          console.log(e.currentTarget.img);
+
+
+          zoomImg.style.backgroundImage = "none";
+          zoomImg.classList.remove("active-img");
+          bdayInfoComment.querySelector(".displaying").classList.toggle("displaying");
+
+
+        // imageHolder.style.backgroundImage = "none";
+        // imageHolder.style.backgroundColor = "orangered";
+        // zoomImg.style.backgroundImage = "url(" + bdayImageField.url + ")";
+        // zoomImg.classList.add("active-img");
+        // bdayInfoDates.style.display ="block";
+        // bdayInfo.style.display ="block";
+        // bdayInfoEntry.style.display ="block";
+        // bdayInfoYear.style.display ="block";
+        // bdayInfoComment.style.display ="block";
+
         
-      //     isSelected = false;
-      //   }
-        
-      // }
-      birthdayEntryHolder.addEventListener("click", showInfo, );
+        // bdayInfoComment.classList.add("displaying");
+
+        //tutors helped....still not working
+
       
-      function showInfo(){
-  
-        if(birthdayEntryHolder.classList.contains("selected-img")) {
-          birthdayEntryHolder.querySelector("selected-img").classList.toggle("selected-img");
-          birthdayEntryHolder.classList.add("deselected-img");
+        // let footv = document.querySelector(".foot")
+        // for(i=0; i<footv.length; i++) {
+        //   footv.children[i].style.display = "none";
+        // }
+
+        // isSelected = true
+
+        // } else {
+
+          zoomImg.style.backgroundImage = "url(" + bdayImageField.url + ")";
+          zoomImg.classList.add("active-img");
+
+
+
+          // imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
+          // imageHolder.style.backgroundColor = "#EEE6E3";
+          // zoomImg.style.backgroundImage = "none";
+          // zoomImg.classList.remove("active-img");
+          // bdayInfoDates.style.display ="none";
+          // bdayInfo.style.display ="none";
+          // bdayInfoEntry.style.display ="none";
+          // bdayInfoYear.style.display ="none";
+          // bdayInfoComment.style.display = "none";
+          
+          // bdayInfoComment.classList.remove("displaying");
+
+
+          // let bdaycomment = document.getElementsByClassName("bday-comment")
+          // for(let i=0; i<bdaycomment.length; i++){
+
+          //   if (bdayInfoComment.querySelector(".displaying")) {
+          //     bdayInfoComment.classList.remove("displaying");
+          //   } else{
+          //     bdayInfoComment.classList.add("displaying");
+          //   }
+          // }
+
+
+          // let bdaycomment = document.getElementsByClassName("bday-comment")
+          // for(let i=0; i<bdaycomment.length; i++){
+
+          //   if (bdayComment[i].dataset.imgName !== zoomImg.dataset.imgName) {
+          //     bdaycomment[i].style.display = "none";
+          //   }
+          // }
+
+
+          //document.getElementsByClassName("bday-comment").style.display = "none";
+          // isSelected = false;
+        // }
+
+        e.currentTarget.classList.toggle("displaying");
 
         }
-        birthdayEntryHolder.classList.toggle("selected-img")
+        
       }
+  
+
+      // this kinda works but doen't toggle and can't get rid of background img when selected
+      // birthdayEntryHolder.addEventListener("click", showInfo, );
+      
+      // function showInfo(){
+  
+      //   if(birthdayEntryHolder.classList.contains("selected-img")) {
+      //     birthdayEntryHolder.querySelector("selected-img").classList.remove("selected-img");
+      //     // birthdayEntryHolder.classList.add("deselected-img");
+
+      //   } else{
+      //   birthdayEntryHolder.classList.toggle("selected-img");
+      //   }
+      // }
 
     } else if(birthday.fields.img){
       imageHolder.style.display = "none";
     }
-
-
-
-
 
     let infoHolder = document.querySelector(".foot");
 
@@ -161,6 +221,7 @@ function showBirthdays() {
     const bdayComment = 'Description: ' + birthday.fields.description;
     let bdayInfoComment = document.createElement("div");
     bdayInfoComment.classList.add("bday-comment");
+    //bdayInfoComment.dataset.imgName = bdayImageField.url;
     bdayInfoComment.innerText = bdayComment;
     infoHolder.appendChild(bdayInfoComment);
 
@@ -246,13 +307,8 @@ let menuByEntry = document.querySelector(".menu-entry")
     sortByZodiac.classList.remove("active-button");
   }
   
-    // let bdayOne = document.querySelector("jan-thirty");
 
-    // bdayOne.addEventListener("click", showOnlyOne);
-
-    // function showOnlyOne(){
-    //   bdayOne.classList.add("apply");
-    // }
+//  menu
 
 let dates = ["Jan 30", "Feb 2", "Feb 15", "Mar 24", "Apr 18", "May 6", "May 27", "Jun 1", "Jun 3", "Jun 14", "Jun 26", "Sep 4","Oct 20", "Nov 15", "Nov 20", "Dec 1"];
 let datesHolder = document.querySelector(".menu-bday")
@@ -270,14 +326,22 @@ for (var i = 0; i < arrayLength; i++) {
   datesHolder.appendChild(indivisualDates);
 }
 
+// this is where im trying to filter the data
+
+// var isFiltered = false;
+
 function filterByDate(e) {
-  console.log(e.currentTarget.date);
-  if(datesHolder.querySelector(".apply")) {
-    datesHolder.querySelector(".apply").classList.toggle("apply");
-  }
-  e.currentTarget.classList.toggle("apply");
-  // document.querySelector(".wrapper").innerHTML = ""
-  // console.log(birthday.fields.dates);
+console.log(e.currentTarget.date);
+if(datesHolder.querySelector(".apply")) {
+datesHolder.querySelector(".apply").classList.toggle("apply");
+}
+e.currentTarget.classList.toggle("apply");
+// document.querySelector(".wrapper").innerHTML = ""
+// console.log(birthday.fields.dates);
+  // if(fieldDates.contains("jan30")) {
+  //   console.log("only jan30 pics")
+  // }
+
 }
 
 
@@ -326,54 +390,24 @@ function filterByEntry(e){
   e.currentTarget.classList.toggle("apply");
 }
 
-    
 
-    // function showDates(){
-    //   dates.forEach() => {
-    //     console.log("showDates()");
-    //     // let indivisualDates = document.createElement("span");
-    //     // indivisualDates.innerText = dates[0];
-    //     // indivisualDates.classList.add("dot");
-    //     // datesHolder.appendChild(indivisualDates);
-    //   };
-    // }
-  
-    // let individualButton = document.querySelector(".menu-bday span")
-    // // // // let dotIsActive = false
-
-    // // individualButton.addEventListener("click", activateDot);
-    
-   
-    // function activateDot(){
-    //   individualButton.classList.add("apply")
-    // }
-    
-       
-//     let bdayOneButton = document.querySelector("#jan-thirty")
-//     bdayOneButton.addEventListener("click", function(){
-//         if (imageHolder.classList.contains("jan30")) {
-//           imageHolder.style.display = "block";
-//           bdayOneButton.classList.add("active");
-//         } else {
-//           imageHolder.style.display = "none";
-//         }
-//       });
-// }
+// logo reload
 
 let home = document.querySelector(".logo")
 home.addEventListener("click", function(){
   window.location.reload();
 })
 
+// audio
+
 var x = document.getElementById("myAudio");
 var y = document.getElementById("myAudio2");
 var z = document.getElementById("myAudio3");
+var lol = document.getElementById("myAudio4");
 
 var songCount = 1;
 
-let bdaysongs =[x, y, z];
-var randomBdaySongs = Math.floor(Math.random() * bdaysongs.length);
-
+let bdaysongs =[x, y, z, lol];
 
 var playing = false;
 function playAudio() { 
@@ -381,7 +415,7 @@ function playAudio() {
   
   songCount++
 
-  if (songCount >=4){
+  if (songCount >=5){
   songCount = 1
   }
   console.log(songCount);
@@ -396,6 +430,8 @@ function playAudio() {
     x.play();
   } if (songCount == 3){
     z.play();
+  } if (songCount == 4){
+    lol.play();
   }
     playing = true;
   }
@@ -403,6 +439,7 @@ function playAudio() {
     x.pause(); 
     y.pause();
     z.pause();
+    lol.pause();
     playing = false;
   }
 } 
