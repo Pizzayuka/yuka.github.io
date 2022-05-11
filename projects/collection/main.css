@@ -413,20 +413,19 @@ body{
   .active-img{
     background-size: cover;
     background-repeat: no-repeat;
-    /* animation: tv 4s ease; */
   }
 
-  @keyframes tv {
-    from {
-      background-size: 0;
-    }
-    to { 
-        background-size: 100%;
-    }
-    }
+.bday-container {
+    display: none;
+    padding: 1rem;
+}
+
+.yo{
+ display: block;
+
+}
 
 .bday-dates{
-    display: none;
     width: 0;
     align-self: flex-end;
     overflow: hidden; 
@@ -436,7 +435,6 @@ body{
 }
 
 .bday-person{
-    display: none;   
     width: 0;
     align-self: flex-end;
     overflow: hidden; 
@@ -448,7 +446,6 @@ body{
 }
 
 .bday-entry{
-    display: none;  
     width: 0;
     align-self: flex-end;
     overflow: hidden; 
@@ -460,7 +457,6 @@ body{
 }
 
 .bday-year{
-    display: none;
     width: 0;
     align-self: flex-end;
     overflow: hidden; 
@@ -472,8 +468,7 @@ body{
 }
 
 .bday-comment{
-    /* display: none; */
-    position: absolute;
+    /* position: absolute; */
     margin-top: 0;
     width: 0;
     align-self: flex-end;

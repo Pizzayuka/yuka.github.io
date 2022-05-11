@@ -46,19 +46,6 @@ function gotAllBirthdays(err) {
   // listDates();
 }
 
-// // just loop through the books and console.log them
-// function consoleLogBirthdays() {
-//   console.log("consoleLogBirthdays()");
-//   birthdays.forEach((birthday) => {
-//     console.log("Birthday:", birthday);
-//   });
-// }
-
-// function deleteShit () {
-//   document.getElementsByClassName('wrapper').innerHTML="";
-//   console.log('shit deleted bro');
-// }
-
 // loop through the books, create an h2 for each one, and add it to the page
 function showBirthdays() {
   console.log("showBirthdays()");
@@ -70,7 +57,10 @@ function showBirthdays() {
     if (birthday.fields.img) {
       let imageHolder = document.createElement("div");
       let bdayImageField = birthday.fields.img[0];
-      // imageHolder.classList.add(birthday.filds.entriesby);
+      // give the fuck field also as a class
+      imageHolder.classList.add(birthday.fields.entriesby);
+      imageHolder.classList.add(birthday.fields.fuck);
+      imageHolder.classList.add(birthday.fields.zodiac);
       imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
       imageHolder.style.backgroundColor = "#EEE6E3";
       imageHolder.classList.add("bdayimage");
@@ -79,175 +69,77 @@ function showBirthdays() {
       birthdayEntryHolder.appendChild(imageHolder);
       
       birthdayEntryHolder.addEventListener("click", showInfo);
-      // var isSelected = false;
+      var isSelected = false;
       let zoomImg = document.querySelector(".zoom");
 
-
       // showing information about the img... it works but keeps selecting 
-      function showInfo(e) {
+      function showInfo() {
 
-        // let foot = document.querySelector(".foot");
-        // while(foot.firstChild) {
-        //   foot.removeChild(foot.firstChild);
-        // }
-
-        if(bdayInfoComment.querySelector(".displaying")){
-          console.log(e.currentTarget.img);
-
-
-          zoomImg.style.backgroundImage = "none";
-          zoomImg.classList.remove("active-img");
-          bdayInfoComment.querySelector(".displaying").classList.toggle("displaying");
-
+        if(isSelected == false){
 
         // imageHolder.style.backgroundImage = "none";
         // imageHolder.style.backgroundColor = "orangered";
-        // zoomImg.style.backgroundImage = "url(" + bdayImageField.url + ")";
-        // zoomImg.classList.add("active-img");
-        // bdayInfoDates.style.display ="block";
-        // bdayInfo.style.display ="block";
-        // bdayInfoEntry.style.display ="block";
-        // bdayInfoYear.style.display ="block";
-        // bdayInfoComment.style.display ="block";
+        zoomImg.style.backgroundImage = "url(" + bdayImageField.url + ")";
+        zoomImg.classList.add("active-img");
+        bdayContainer.style.display ="block";
+        isSelected = true;
 
-        
-        // bdayInfoComment.classList.add("displaying");
-
-        //tutors helped....still not working
-
-      
-        // let footv = document.querySelector(".foot")
-        // for(i=0; i<footv.length; i++) {
-        //   footv.children[i].style.display = "none";
-        // }
-
-        // isSelected = true
-
-        // } else {
-
-          zoomImg.style.backgroundImage = "url(" + bdayImageField.url + ")";
-          zoomImg.classList.add("active-img");
-
-
+        } else if(isSelected == true) {
 
           // imageHolder.style.backgroundImage = "url(" + bdayImageField.url + ")";
           // imageHolder.style.backgroundColor = "#EEE6E3";
-          // zoomImg.style.backgroundImage = "none";
-          // zoomImg.classList.remove("active-img");
-          // bdayInfoDates.style.display ="none";
-          // bdayInfo.style.display ="none";
-          // bdayInfoEntry.style.display ="none";
-          // bdayInfoYear.style.display ="none";
-          // bdayInfoComment.style.display = "none";
-          
-          // bdayInfoComment.classList.remove("displaying");
+          zoomImg.style.backgroundImage = "none";
+          zoomImg.classList.remove("active-img");
+          bdayContainer.style.display ="none";
+          isSelected = false;
 
-
-          // let bdaycomment = document.getElementsByClassName("bday-comment")
-          // for(let i=0; i<bdaycomment.length; i++){
-
-          //   if (bdayInfoComment.querySelector(".displaying")) {
-          //     bdayInfoComment.classList.remove("displaying");
-          //   } else{
-          //     bdayInfoComment.classList.add("displaying");
-          //   }
-          // }
-
-
-          // let bdaycomment = document.getElementsByClassName("bday-comment")
-          // for(let i=0; i<bdaycomment.length; i++){
-
-          //   if (bdayComment[i].dataset.imgName !== zoomImg.dataset.imgName) {
-          //     bdaycomment[i].style.display = "none";
-          //   }
-          // }
-
-
-          //document.getElementsByClassName("bday-comment").style.display = "none";
-          // isSelected = false;
-        // }
-
-        e.currentTarget.classList.toggle("displaying");
-
-        }
-        
+        } 
       }
-  
-
-      // this kinda works but doen't toggle and can't get rid of background img when selected
-      // birthdayEntryHolder.addEventListener("click", showInfo, );
-      
-      // function showInfo(){
-  
-      //   if(birthdayEntryHolder.classList.contains("selected-img")) {
-      //     birthdayEntryHolder.querySelector("selected-img").classList.remove("selected-img");
-      //     // birthdayEntryHolder.classList.add("deselected-img");
-
-      //   } else{
-      //   birthdayEntryHolder.classList.toggle("selected-img");
-      //   }
-      // }
 
     } else if(birthday.fields.img){
       imageHolder.style.display = "none";
     }
 
+
+    // this is where we're adding to the page
     let infoHolder = document.querySelector(".foot");
 
+    let bdayContainer = document.createElement("div");
+    bdayContainer.classList.add("bday-container");
+
+    // then write new birthday
     const bdayDates = 'Birthday: ' + birthday.fields.dates;
     let bdayInfoDates = document.createElement("div");
     bdayInfoDates.classList.add("bday-dates");
     bdayInfoDates.innerText = bdayDates;
-    infoHolder.appendChild(bdayInfoDates);
+    bdayContainer.appendChild(bdayInfoDates);
 
     const bdayInfoText = 'Birthday person: ' + birthday.fields.maincharacter;
     let bdayInfo = document.createElement("div");
     bdayInfo.classList.add("bday-person");
     bdayInfo.innerText = bdayInfoText;
-    infoHolder.appendChild(bdayInfo);
+    bdayContainer.appendChild(bdayInfo);
 
     const bdayEntry = 'Entry by: ' + birthday.fields.entriesby;
     let bdayInfoEntry = document.createElement("div");
     bdayInfoEntry.classList.add("bday-entry");
     bdayInfoEntry.innerText = bdayEntry;
-    infoHolder.appendChild(bdayInfoEntry);
+    bdayContainer.appendChild(bdayInfoEntry);
 
     const bdayYear = 'Year taken: ' + birthday.fields.year;
     let bdayInfoYear = document.createElement("div");
     bdayInfoYear.classList.add("bday-year");
     bdayInfoYear.innerText = bdayYear;
-    infoHolder.appendChild(bdayInfoYear);
+    bdayContainer.appendChild(bdayInfoYear);
 
     const bdayComment = 'Description: ' + birthday.fields.description;
     let bdayInfoComment = document.createElement("div");
     bdayInfoComment.classList.add("bday-comment");
     //bdayInfoComment.dataset.imgName = bdayImageField.url;
     bdayInfoComment.innerText = bdayComment;
-    infoHolder.appendChild(bdayInfoComment);
+    bdayContainer.appendChild(bdayInfoComment);
 
-  //   imageHolder.addEventListener("click", show);
-
-  //  function show() {
-
-  //       console.log("test");
-
-  //       // bdayInfoDates.classList.toggle("selected");
-  //       // bdayInfo.classList.toggle("selected");
-  //       // bdayInfoEntry.classList.toggle("selected");
-  //       // bdayInfoYear.classList.toggle("selected");
-  //       // bdayInfoComment.classList.toggle("selected");
-  //   }
-
-
-  
-  //   let onlyJan30 = false
-  //   let fieldDates = birthday.fields.dates 
-  // if(fieldDates.contains("January 30,  2002")) {
-  //   imageHolder.classList.add("jan30");
-  //   onlyJan30 = true
-  // }
-  
-
+    infoHolder.appendChild(bdayContainer);
 
   });
 }
@@ -310,7 +202,7 @@ let menuByEntry = document.querySelector(".menu-entry")
 
 //  menu
 
-let dates = ["Jan 30", "Feb 2", "Feb 15", "Mar 24", "Apr 18", "May 6", "May 27", "Jun 1", "Jun 3", "Jun 14", "Jun 26", "Sep 4","Oct 20", "Nov 15", "Nov 20", "Dec 1"];
+let dates = ["jan30", "feb2", "feb15", "mar24", "apr18", "may6", "may27", "jun1", "jun3", "jun14", "jun26", "sep4","oct20", "nov15", "nov20", "dec1"];
 let datesHolder = document.querySelector(".menu-bday")
 var arrayLength = dates.length;
 
@@ -327,6 +219,10 @@ for (var i = 0; i < arrayLength; i++) {
 }
 
 // this is where im trying to filter the data
+birthdays.forEach((birthday) => {
+  indivisualDates.classList.add(birthday.fields.fuck);
+
+});
 
 // var isFiltered = false;
 
@@ -338,9 +234,7 @@ datesHolder.querySelector(".apply").classList.toggle("apply");
 e.currentTarget.classList.toggle("apply");
 // document.querySelector(".wrapper").innerHTML = ""
 // console.log(birthday.fields.dates);
-  // if(fieldDates.contains("jan30")) {
-  //   console.log("only jan30 pics")
-  // }
+document.querySelector(".wrapper").querySelector("." + e.currentTarget.date).style.border = "1px solid red";
 
 }
 
@@ -390,6 +284,10 @@ function filterByEntry(e){
   e.currentTarget.classList.toggle("apply");
 }
 
+
+function filterImgByBday(fuck){
+
+}
 
 // logo reload
 
