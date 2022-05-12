@@ -135,7 +135,6 @@ function showBirthdays() {
     const bdayComment = 'Description: ' + birthday.fields.description;
     let bdayInfoComment = document.createElement("div");
     bdayInfoComment.classList.add("bday-comment");
-    //bdayInfoComment.dataset.imgName = bdayImageField.url;
     bdayInfoComment.innerText = bdayComment;
     bdayContainer.appendChild(bdayInfoComment);
 

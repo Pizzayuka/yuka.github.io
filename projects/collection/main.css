@@ -474,9 +474,9 @@ body{
     align-self: flex-end;
     overflow: hidden; 
     white-space: nowrap; 
-    /* animation: typing 3s steps(40, end);
+    animation: typing 3s steps(40, end);
     animation-delay: 2s;
-    animation-fill-mode: forwards; */
+    animation-fill-mode: forwards;
 }
 
 .displaying{
