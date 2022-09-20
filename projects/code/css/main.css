@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+
+.mask {
+   position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    pointer-events: none;
+} 
+   
+video {
+    position: absolute;
+    top: 180px;
+    left: 500px;
+    z-index: -1;
+}
+
+.backbutton {
+  width: 48px;
+  position: relative;
+  top: 709px;
+  left: 725px;
+  display: inline-block;
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
