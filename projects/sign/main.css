@@ -43,6 +43,7 @@ body{
     background: linear-gradient(90deg, rgba(255,83,0,1) 0%, rgba(254,249,4,1) 10%, rgba(254,249,4,1) 90%, rgba(255,83,0,1) 100%);
     margin: 0 auto;
     margin-top: -63px;
+    pointer-events: none;
 
 }
 
@@ -97,6 +98,8 @@ h3{
     margin: 0 auto;
     text-align: center;
     margin-top: -50vh;
+    pointer-events: none;
+
 }
 
 h4{
@@ -108,3 +111,14 @@ h4{
     font-family: graf2;
 
 }
+
+.reference{
+    margin-left: 35vw;
+    margin-top: 5vh;
+}
+
+img{
+    width: 30vw;
+    height: auto;
+}
+
