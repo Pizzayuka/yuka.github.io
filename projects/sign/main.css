@@ -18,6 +18,11 @@
     src: url(assets/Urban\ Calligraphy.ttf);
 }
 
+@font-face {
+    font-family:sava;
+    src: url(assets/SavaPro-Regular.otf);
+}
+
 body{
     background-color: black;
 }
@@ -71,8 +76,9 @@ h3{
     font-variant-caps: all-small-caps;
     font-size: 2.5vw;
     margin-left: 10vw;
-    line-height: 3.5vh;
-
+    line-height: 4vh;
+    font-family: sava;
+    color: rgb(50, 19, 19);
 }
 
 .mirror{
