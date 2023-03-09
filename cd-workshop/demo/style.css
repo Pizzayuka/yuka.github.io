@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  background: lightgray;
+}
+
+h2 {
+  break-before: page;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+}
+
+@page {
+  size: 5in 8in;
+  margin-top: 0.25in;
+  margin-bottom: 0.5in;
+}
+@page:left {
+  margin-left: 0.25in;
+  margin-right: 1in;
+}
+@page:right {
+  margin-left: 1in;
+  margin-right: 0.25in;
+}
