@@ -60,6 +60,7 @@ h1{
 }
 
 h2{
+    position: relative;
     font-family: script; 
     color: antiquewhite; 
     font-stretch: 150%;
@@ -99,7 +100,7 @@ h3{
     text-align: center;
     margin-top: -50vh;
     pointer-events: none;
-
+    z-index: 101;
 }
 
 h4{
