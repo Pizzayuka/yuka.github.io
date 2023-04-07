@@ -1,11 +1,37 @@
-body {
-  font-family: sans-serif;
-  background: lightgray;
+@font-face {
+  font-family: franktur ;
+  src: url(assets/FrakturNo2.ttf);
 }
 
-h2 {
-  break-before: page;
+body {
+  font-family: "yu-gothic-pr6n", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10pt;
+  line-height: 11pt;
+
+  /* background: lightgray; */
+
+  counter-reset: page;
+
+  
 }
+
+h1{
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  font-family: franktur;
+  font-size: 26pt;
+  line-height: 24pt;
+}
+
+span{
+  font-size: 6pt;
+
+}
+
+
 
 @media print {
   body {
@@ -18,11 +44,479 @@ h2 {
   margin-top: 0.25in;
   margin-bottom: 0.5in;
 }
+
 @page:left {
-  margin-left: 0.25in;
-  margin-right: 1in;
+  background-image: url(assets/background.jpg);
+  background-size: cover;
+  margin-top: 0.5in;
+  margin-bottom: 0.5in;
+  margin-left: 0.5in;
+  margin-right: 1.72in;
+
+  @bottom-left {
+    font-family: franktur;
+
+    content: counter(page);
+  }
+  @bottom-right {
+    font-family: franktur;
+
+    content:"future of tribal tattoo";
+  }
 }
 @page:right {
-  margin-left: 1in;
-  margin-right: 0.25in;
+  background-image: url(assets/background2.jpg);
+  background-size: cover;
+  margin-top: 0.5in;
+  margin-bottom: 0.5in;
+  margin-left: 1.72in;
+  margin-right: 0.5in;
+  @bottom-left {
+    font-family: franktur;
+
+    content:"Yuka Tamura";
+  }
+  @bottom-right {
+    font-family: franktur;
+
+    content: counter(page);
+  }
+}
+
+img{
+  padding: 0;
+  margin: 0;
+}
+
+.twocolumns{
+  display: flex;
+  flex-direction: row;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, 187px [col-start]);
+}
+
+#apo{
+  height: 3.3333in;
+}
+
+#poly{
+  width: 3.75in;
+}
+
+#ed{
+  width: 1.8125in;
+}
+
+#Zulueta{
+  width:2.3025in;
+  margin-left: 0.125in;
+}
+
+#angelina{
+  width:2.7813in;
+}
+
+#tyson{
+  width:2.7813in;
+  margin-top: -10px;
+  margin-left: -0.4in;
+}
+#six{
+margin-left:-0.4in ;
+}
+
+
+#seven{
+  line-height: 25px;
+  margin-left:-0.95in ;
+
+}
+
+#tomas{
+width: 3.75in;
+margin: -0.97in;
+margin-top: 0in;
+margin-bottom: 0in;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, auto);
+
+}
+
+#tomas2{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#tomastag{
+  margin-top: -48px;
+}
+
+#matt{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  margin-top: -48px;
+
+}
+#matttag{
+  margin-top: -125px;
+}
+
+#yonah{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  margin-top: -125px;
+}
+
+#nisacco{
+ width: 2.3333in;
+ border: 1px solid red;
+ margin-bottom: -5px;
+
+}
+
+#yam{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+
+}
+
+.wrapper2{
+  margin-left: -0.97in;
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, auto);
+
+}
+
+#nico{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+
+#jayaism{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px; 
+}
+
+#jaytag{
+  margin-top: -25px;
+}
+
+#taku{
+  width: 2.4825in;
+  border: 1px solid red;
+  margin-bottom: 0px;
+  margin-left: -0.67in;
+}
+
+#takutag{
+  margin-top: -25px;
+  margin-bottom: 0px;
+  margin-left: -0.67in;
+}
+
+#wolf{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px; 
+  margin-top: -25px;
+}
+
+#wolftag{
+margin-top: 0px;
+}
+
+#pia{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px; 
+  margin-top: -25px;
+}
+
+#piatag{
+  /* margin-top: -8px; */
+}
+
+#sasah{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px; 
+  margin-top: -5px;
+}
+
+#diego{
+  width: 3.75in;
+
+}
+
+#solid{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#ichi{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#olvido{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+#olvidotag{
+margin-top: -80px;
+}
+
+#leea{
+  width: 2.21in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  margin-top: -5px;
+
+}
+
+#aagh{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  margin-top: -85px;
+}
+#aaghtag{
+  margin-top: -3px  ;
+}
+#lasanta{
+  width: 2.1025in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  margin-left: -0.29in;
+  /* margin-top: 100px; */
+}
+
+#lasantatag{
+  margin-left: -0.29in;
+
+}
+
+#gotgame{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#gotgametag{
+  margin-top: -45px;
+}
+
+#pandemic{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#iscia{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  margin-top: -45px;
+}
+
+#isciatag{
+margin-top: -95px;
+}
+
+#world{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  margin-top: -100px;
+}
+
+#noeltat{
+  width:4.875in;
+}
+
+#noeltat2{
+  width:4.875in;
+  height: 6.6667in;
+  margin-left: -6.22in;
+}
+
+#column2{
+  margin-left: 1.34in;
+  margin-right: 0.5in;
+}
+
+.quotes{
+  font-weight: 800;
+
+}
+
+#fuck{
+  margin-left: -0.97in;
+}
+#noel{
+  width: 2.7813in;
+}
+
+#cisne{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#bigd{
+  width: 2.3492in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  margin-left: -0.965in;
+}
+
+#bigdtag{
+  margin-left: -0.965in;
+}
+  
+#abuh{
+  width: 2.7813in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#seth{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#loic{
+  width: 2.7813in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#loictag{
+  margin-top: -8px;
+}
+#o00{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+#o00tag{
+  margin-top: -60px;
+}
+
+#lepytag{
+  margin-top: -25px;
+}
+
+#gogo{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#lepy{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+
+
+#p4{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+}
+
+#nerv{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+margin-top: -25px;
+}
+
+#nervtag{
+  margin-top: -80px;
+}
+
+#jony{
+  width: 2.0225in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  margin-left: -0.21in;
+  margin-top: -5px;
+}
+#jonytag{
+  margin-left: -0.21in;
+}
+#vva{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  margin-top: -90px;
+}
+
+#seth2{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  position: absolute;
+  display: block;
+  margin-top: -426px;
+  margin-left: -3.32in;
+}
+
+#o002{
+  width: 1.8125in;
+  border: 1px solid red;
+  margin-bottom: -5px;
+  position: absolute;
+  display: block;
+  margin-top: -172px;
+  margin-left: -3.32in;
+}
+
+#neto{
+  width: 1.8125in;
+  margin-left: -1.0956in;
+}
+#netotag{
+  margin-left: -1.0956in;
+
+}
+#cyber{
+  width: 1.8125in;
+}
+
+#cybertag{
+  margin-left: -0.965in;
+
+}
+
+.wrapper3{
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, auto);
+
 }
